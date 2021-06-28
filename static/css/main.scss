@@ -6,4 +6,28 @@ html {
 
 body {
   margin: 3rem 20%;
+  display: grid;
+}
+
+#siteheader {
+  #logo {
+    grid-column: 1/3;
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 150%;
+    &:hover {
+      text-decoration: underline;
+      text-underline-offset: 0.25em;
+    }
+    h1 {
+      font-weight: 100;
+      margin-left: 2rem;
+    }
+    img {
+      max-height: 5em;
+    }
+  }
 }
