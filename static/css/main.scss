@@ -1,7 +1,12 @@
 $cjk-fallback: "Noto Sans CJK TC", "Microsoft Jhenghei";
 
+$color-a: #dfb5af;
+$color-b: #91d6c3;
+$color-white: #f8f6f7;
+
 html {
   font-family: "M PLUS 1p", $cjk-fallback, sans-serif;
+  background: $color-white;
 }
 
 body {
@@ -28,13 +33,28 @@ body {
       max-height: 5em;
     }
   }
-  nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    text-align: center;
-    justify-content: space-around;
-    width: 30rem;
-    margin: 0 auto;
+  nav {
+    ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-around;
+      width: 30rem;
+      margin: 0 auto;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+      opacity: 0.7;
+      transition: opacity 250ms ease;
+    }
+    .current,
+    a:hover {
+      opacity: 1;
+    }
+    li {
+      display: inline-block;
+    }
   }
 }

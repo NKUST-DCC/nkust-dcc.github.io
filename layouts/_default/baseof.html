@@ -37,11 +37,21 @@
       </div>
       <nav>
         <ul>
-          <li><a href="/">首頁</a></li>
-          <li><a href="/events">社團活動</a></li>
-          <li><a href="/calendar">行事曆</a></li>
-          <li><a href="/about">關於我們</a></li>
-          <li><a href="/join">入社</a></li>
+          <li>
+            {{ partial "cura" (dict "ctx" . "href" "/" "text" "首頁") }}
+          </li>
+          <li>
+            {{ partial "cura" (dict "ctx" . "href" "/events/" "text" "社團活動") }}
+          </li>
+          <li>
+            {{ partial "cura" (dict "ctx" . "href" "/calendar/" "text" "行事曆") }}
+          </li>
+          <li>
+            {{ partial "cura" (dict "ctx" . "href" "/about/" "text" "關於我們") }}
+          </li>
+          <li>
+            {{ partial "cura" (dict "ctx" . "href" "/join/" "text" "入社") }}
+          </li>
           <li><a href="https://twitter.com/DreamsComiC8763">Twitter</a></li>
         </ul>
       </nav>
