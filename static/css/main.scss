@@ -1,3 +1,5 @@
+@use "sass:color";
+
 $cjk-fallback: "Noto Sans CJK TC", "Microsoft Jhenghei";
 
 $color-a: #dfb5af;
@@ -7,6 +9,10 @@ $color-white: #f8f6f7;
 html {
   font-family: "M PLUS 1p", $cjk-fallback, sans-serif;
   background: $color-white;
+}
+
+a {
+  color: color.scale($color-b, $lightness: -34%);
 }
 
 body {
