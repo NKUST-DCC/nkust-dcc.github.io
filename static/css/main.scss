@@ -75,7 +75,7 @@ p {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    width: 45rem;
+    width: 40rem;
     margin: 0 auto;
   }
   a {
@@ -114,21 +114,21 @@ p {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 700px) {
   #logo {
-    display: block;
+    display: flex;
+    justify-content: flex-start;
     text-align: left;
-    font-size: 16pt;
+    font-size: 12pt;
     img {
-      width: 1em;
-      height: 1em;
+      display: none;
     }
     h1 {
       margin-left: 0;
       margin-top: 0;
     }
   }
-  #siteheader {
+  #siteheader nav {
     ul {
       display: unset;
     }
