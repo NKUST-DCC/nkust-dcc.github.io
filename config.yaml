@@ -9,6 +9,11 @@ staticDir: static
 # 有些東西需要這個選項才會支援中文的樣子
 hasCJKLanguage: true
 
+markup:
+  goldmark:
+    renderer:
+      hardWraps: true
+
 # 我會用README檔來解釋各個資料夾的意義，但我們不希望這些檔案被輸出。
 ignoreFiles:
   - README\.md$
