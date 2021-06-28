@@ -1,0 +1,18 @@
+# 我們會利用的資料夾
+# 其實也不用寫下來 (這些都是預設值)
+contentDir: content
+staticDir: static
+layoutDir: layouts
+publishDir: public
+staticDir: static
+
+# 有些東西需要這個選項才會支援中文的樣子
+hasCJKLanguage: true
+
+# 我會用README檔來解釋各個資料夾的意義，但我們不希望這些檔案被輸出。
+ignoreFiles:
+  - README\.md$
+  - readme\.md$
+
+# 有些Hugo模板語言的函數需要這個才能產生正確的連結
+baseURL: https://nkust-dcc.github.io
