@@ -36,21 +36,22 @@
     <header id="siteheader">
       <div id="logo">
         <img src="/icon.png" alt="Icon" />
-        <h1>高科大<br />夢想漫研社</h1>
+        <h1><span>高科大</span><span>夢想漫研社</span></h1>
       </div>
       <nav>
         <ul>
+          <li>{{ partial "cura" (dict "ctx" . "href" "/" "text" "首頁") }}</li>
           <li>
-            {{ partial "cura" (dict "ctx" . "href" "/" "text" "首頁") }}
+            {{ partial "cura" (dict "ctx" . "href" "/about/" "text" "認識我們")
+            }}
           </li>
           <li>
-            {{ partial "cura" (dict "ctx" . "href" "/about/" "text" "認識我們") }}
+            {{ partial "cura" (dict "ctx" . "href" "/events/" "text" "社團活動")
+            }}
           </li>
           <li>
-            {{ partial "cura" (dict "ctx" . "href" "/events/" "text" "社團活動") }}
-          </li>
-          <li>
-            {{ partial "cura" (dict "ctx" . "href" "/calendar/" "text" "行事曆") }}
+            {{ partial "cura" (dict "ctx" . "href" "/calendar/" "text" "行事曆")
+            }}
           </li>
           <li>
             {{ partial "cura" (dict "ctx" . "href" "/join/" "text" "入社") }}
