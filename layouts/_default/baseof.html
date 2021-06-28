@@ -7,11 +7,14 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <!-- It's always present, I just want shorter code -->
-    {{ with .Title }}
-    <title>{{.}} | 高科大夢想漫研</title>
-    <meta property="og:title" content="{{.}}" />
-    {{ end }} {{ with .Site.Params.description }}
+    {{ if (eq .Kind "home") }}
+    <title>高科大夢想漫研</title>
+    {{ else }}
+    <title>{{.Title}} | 高科大夢想漫研</title>
+    {{ end }}
+    <meta property="og:title" content="{{.Title}}" />
+
+    {{ with .Site.Params.description }}
     <meta name="description" content="{{.}}" />
     <meta name="twitter:description" content="{{.}}" />
     <meta property="og:description" content="{{.}}" />
@@ -41,18 +44,21 @@
             {{ partial "cura" (dict "ctx" . "href" "/" "text" "首頁") }}
           </li>
           <li>
+            {{ partial "cura" (dict "ctx" . "href" "/about/" "text" "認識我們") }}
+          </li>
+          <li>
             {{ partial "cura" (dict "ctx" . "href" "/events/" "text" "社團活動") }}
           </li>
           <li>
             {{ partial "cura" (dict "ctx" . "href" "/calendar/" "text" "行事曆") }}
           </li>
           <li>
-            {{ partial "cura" (dict "ctx" . "href" "/about/" "text" "關於我們") }}
-          </li>
-          <li>
             {{ partial "cura" (dict "ctx" . "href" "/join/" "text" "入社") }}
           </li>
           <li><a href="https://twitter.com/DreamsComiC8763">Twitter</a></li>
+          <li>
+            {{ partial "cura" (dict "ctx" . "href" "/org/" "text" "組織章程") }}
+          </li>
         </ul>
       </nav>
     </header>
