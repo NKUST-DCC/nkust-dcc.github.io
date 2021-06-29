@@ -45,14 +45,18 @@ body {
   }
   & > main {
     flex-grow: 1;
-    margin: 3rem 20%;
+    margin: 3rem 15%;
   }
   & > footer {
-    padding: 1rem 10% 0 10%;
+    // 用padding才會保持完全從左到右的背景顏色
+    padding: 2rem 10% 2rem 10%;
     background: darken($color-b, 30%);
     color: $color-white;
+    h1 {
+      font-size: 16pt;
+    }
     a {
-      background: $color-white;
+      color: $color-white;
       text-decoration: underline;
     }
   }
