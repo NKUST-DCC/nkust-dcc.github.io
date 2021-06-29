@@ -12,7 +12,7 @@
   <ul>
     {{ range (sort (where .Site.RegularPages "Section" "calendar") "Title" "desc")}}
       <li>
-          {{ partial "cura" (dict "ctx" . "href" (relURL .Permalink) "text" .Title) }}
+          {{ partial "cura" (dict "ctx" $ "href" .Permalink "text" .Title) }}
       </li>
     {{ end }}
   </ul>
