@@ -11,5 +11,5 @@ make serve
 ```
 
 ```sh
-make public.zip
+make public
 ```

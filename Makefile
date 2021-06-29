@@ -17,7 +17,7 @@ watch-css:
 # 開發用。hugo server會監視各個資料夾(static/、layouts/、content/等等)
 # 的內容，如果有改變的話就會重新輸出到public/去。跟上面一樣，平常它也
 # 是輸出一次就結束了。
-watch-hugo:
+watch-hugo: content/calendar
 	hugo server
 
 # 這也是開發用。concurrently是一個同時執行後面指令的程式。這樣開發時只
@@ -32,7 +32,7 @@ public.zip: public
 # 產生 public (資料夾)的方法：先產生 static/css/main.css，然後執行hugo --minify
 # 單跑 hugo 指令就會把網站內容輸出到 public 這個資料夾下。--minify告訴
 # 它請 Hugo 把輸出的 HTML 清乾淨一點。
-public: static/css/main.css
+public: static/css/main.css content/calendar
 	hugo --minify
 
 # 產生 static/css/main.css 的方法：先產生 static/css/main.scss，然後叫
@@ -43,3 +43,8 @@ public: static/css/main.css
 # 它。
 static/css/main.css: static/css/main.scss
 	npx sass --no-source-map static/css/main.scss static/css/main.css
+
+# 自動為assets下每個行事曆的檔案產生一個頁面
+.PHONY: content/calendar
+content/calendar: static/assets/calendar
+	for f in static/assets/calendar/*.pdf; do printf -- "---\ntitle: %s\n---" $$(basename "$$f" .pdf) > content/calendar/$$(basename $$f .pdf).md; done

@@ -1,3 +1,7 @@
 node_modules/
 static/css/main.css
 *.map
+
+content/calendar/*.md
+!content/calendar/_index.md
+!content/calendar/README.md
