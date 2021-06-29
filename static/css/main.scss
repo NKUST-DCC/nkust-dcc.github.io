@@ -46,6 +46,14 @@ body {
   & > main {
     flex-grow: 1;
     margin: 3rem 15%;
+    display: flex;
+    article {
+      flex-grow: 1;
+    }
+    aside {
+      margin-left: 2rem;
+      width: 20rem;
+    }
   }
   & > footer {
     // 用padding才會保持完全從左到右的背景顏色
@@ -72,6 +80,29 @@ a {
   }
   &:focus {
     outline: 0.25rem solid darken($color-a, 30%);
+  }
+}
+
+aside {
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  a {
+    display: inline-block;
+    width: 100%;
+    color: darken($color-b, 30%);
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 0.5rem #00000064;
+    opacity: 0.7;
+    transition: all 250ms ease;
+    &:hover {
+      box-shadow: 0 0 0.5rem #00000064;
+      opacity: 1;
+    }
   }
 }
 
