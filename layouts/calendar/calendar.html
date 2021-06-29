@@ -1,10 +1,27 @@
 {{ define "main" }}
+{{ $calendars := (where .Site.RegularPages "Section" "calendar") }}
+{{ $calendars = (sort $calendars "Title" "desc") }}
+
+{{ $latest := (index $calendars 0).Title}}
+
+{{ $this := "" }}
+{{ if .IsSection }}
+{{ $this = $latest }}
+{{ else }}
+{{ $this = .Title }}
+{{ end }}
+
 <article>
-  <h1>{{.Title}}</h1>
-  {{.Content}}
+  <!-- HACK: 不應該這樣結合文字。但現在先這樣應該沒問題 -->
+  <h1>{{.Title}}社團行事曆</h1>
   <iframe
-    src="/assets/calendar/109-2.pdf"
-    style="width: 100%; height: 768px; box-shadow: 0 0 1rem"
+    src="/assets/calendar/{{$this}}.pdf"
+    style="
+margin-top: 1rem;
+width: 100%;
+height: 768px;
+box-shadow: 0 0 0.5rem;
+border-radius: 0.5rem;"
     frameborder="no"
   ></iframe>
 </article>
