@@ -1,0 +1,13 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+{{partial "content" .}}
+
+<iframe src="/assets/calendar/109-2.pdf" style="width: 100%; height: 768px; box-shadow: 0 0 1rem;" frameborder="no"></iframe>
+
+<ul>
+{{ range .Pages }}
+    <li><a href="{{.Permalink}}">{{.Title}}</a></li>
+{{ end }}
+</ul>
+
+{{ end }}
