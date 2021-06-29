@@ -107,6 +107,9 @@ aside {
 }
 
 article {
+  img {
+    max-width: 100%;
+  }
   h1 {
     margin: 2rem 0 1rem 0;
     text-decoration: underline;
