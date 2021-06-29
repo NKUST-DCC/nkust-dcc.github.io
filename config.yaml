@@ -31,3 +31,9 @@ description: |
   卻苦無老師指導嗎?
   沒關係!!
   這裡讓你兩個願望一次滿足!!
+
+frontmatter:
+  # 預設的date太籠統了。寫published比較好一點。
+  date: ["published", "created", "date"]
+  lastmod: ["updated"]
+  expiryDate: ["expiryDate"]
