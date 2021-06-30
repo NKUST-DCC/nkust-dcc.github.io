@@ -94,6 +94,9 @@ aside a:hover, aside a.current {
   opacity: 1;
 }
 
+article img {
+  max-width: 100%;
+}
 article h1 {
   margin: 2rem 0 1rem 0;
   text-decoration: underline;
