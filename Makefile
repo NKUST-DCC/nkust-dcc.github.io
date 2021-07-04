@@ -47,4 +47,4 @@ static/css/main.css: static/css/main.scss
 # 自動為assets下每個行事曆的檔案產生一個頁面
 .PHONY: content/calendar
 content/calendar: static/assets/calendar
-	for f in static/assets/calendar/*.pdf; do printf -- "---\ntitle: %s\n---" $$(basename "$$f" .pdf) > content/calendar/$$(basename $$f .pdf).md; done
+	for f in static/assets/calendar/*.pdf; do printf -- "---\ntitle: %s 社團行事曆\n---" $$(basename "$$f" .pdf) > content/calendar/$$(basename $$f .pdf).md; done
