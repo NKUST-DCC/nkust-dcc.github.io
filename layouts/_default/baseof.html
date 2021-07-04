@@ -42,20 +42,25 @@
         <ul>
           <li>{{ partial "cura" (dict "ctx" . "href" "/" "text" "首頁") }}</li>
           <li>
+            <!-- prettier-ignore -->
             {{ partial "cura" (dict "ctx" . "href" "/about/" "text" "認識我們")}}
           </li>
           <li>
+            <!-- prettier-ignore -->
             {{ partial "cura" (dict "ctx" . "href" "/tags/社團活動/" "text" "社團活動")}}
           </li>
           <li>
+            <!-- prettier-ignore -->
             {{ partial "cura" (dict "ctx" . "href" "/calendar/" "text" "行事曆")}}
           </li>
           <li>
+            <!-- prettier-ignore -->
             {{ partial "cura" (dict "ctx" . "href" "/join/" "text" "入社") }}
           </li>
           <li><a href="https://twitter.com/DreamsComiC8763">Twitter</a></li>
           <li>
-            {{ partial "cura" (dict "ctx" . "href" "/org/" "text" "組織章程") }}
+            <!-- prettier-ignore -->
+            {{ partial "cura" (dict "ctx" . "href" "/組織章程/" "text" "組織章程") }}
           </li>
         </ul>
       </nav>
@@ -68,10 +73,19 @@
     <footer>
       <h1>聯絡資訊</h1>
       <dl>
-          <dt>社團辦公室</dt><dd>高雄科技大學第一校區活動中心三樓</dd>
-          <dt>Twitter</dt><dd><a href="https://twitter.com/DreamsComiC8763">@DreamsComiC8763</a></dd>
+        <dt>社團辦公室</dt>
+        <dd>高雄科技大學第一校區活動中心三樓</dd>
+        <dt>Twitter</dt>
+        <dd>
+          <a href="https://twitter.com/DreamsComiC8763">@DreamsComiC8763</a>
+        </dd>
       </dl>
-      <p>© 2021 高雄科技大學（第一校區）夢想漫研社。版權所有；<a href="https://github.com/NKUST-DCC/nkust-dcc.github.io">程式碼依MIT授權條款釋出</a>。</p>
+      <p>
+        © 2021 高雄科技大學（第一校區）夢想漫研社。版權所有；<a
+          href="https://github.com/NKUST-DCC/nkust-dcc.github.io"
+          >程式碼依MIT授權條款釋出</a
+        >。
+      </p>
     </footer>
   </body>
 </html>
