@@ -1,11 +1,16 @@
 {{ define "main" }}
-<article>
+<section>
   <h1>{{ .Title }}</h1>
   {{.Content}}
-  <ul>
+  <ul class="cards">
     {{ range .Pages }}
-    <li><a href="{{.Permalink}}">{{.Title}}</a></li>
+    <li>
+      <a class="card" href="{{.Permalink}}">
+        <img src='{{ or .Params.cover "/assets/20210505/_MG_4277.JPG" }}' />
+        <span>{{.Title}}</span>
+      </a>
+    </li>
     {{ end }}
   </ul>
-</article>
+</section>
 {{ end }}
