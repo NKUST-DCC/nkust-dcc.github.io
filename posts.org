@@ -1,5 +1,3 @@
-#+title: 社團活動
-
 * [1/55] 沒有現存文章而需要補充的活動頁面
 :PROPERTIES:
 :COOKIE_DATA: recursive
