@@ -18,6 +18,8 @@ jobs:
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: 'latest'
+      - name: Install packages
+        run: npm install --production
       - name: Build
         run: make public
       - name: Deploy
