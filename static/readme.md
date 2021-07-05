@@ -11,5 +11,5 @@ Hugo會把這個資料夾下的所有檔案原封不動的複製到輸出的資�
 如果我們修icon的話：
 
 ```
-convert icon.png -resize 32x32 favicon.ico
+gm convert icon.png -resize 32x32 favicon.ico
 ```
