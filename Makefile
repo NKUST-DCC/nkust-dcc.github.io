@@ -17,7 +17,7 @@ watch-css:
 # 開發用。hugo server會監視各個資料夾(static/、layouts/、content/等等)
 # 的內容，如果有改變的話就會重新輸出到public/去。跟上面一樣，平常它也
 # 是輸出一次就結束了。
-watch-hugo: content
+watch-hugo: content js
 	hugo server
 
 # 這也是開發用。concurrently是一個同時執行後面指令的程式。這樣開發時只
@@ -32,7 +32,7 @@ public.zip: public
 # 產生 public (資料夾)的方法：先產生 static/css/main.css，然後執行hugo --minify
 # 單跑 hugo 指令就會把網站內容輸出到 public 這個資料夾下。--minify告訴
 # 它請 Hugo 把輸出的 HTML 清乾淨一點。
-public: static/css/main.css content
+public: static/css/main.css content js
 	hugo --minify
 
 # 產生 static/css/main.css 的方法：先產生 static/css/main.scss，然後叫
@@ -44,6 +44,9 @@ public: static/css/main.css content
 static/css/main.css: static/css/main.scss
 	npx sass --no-source-map static/css/main.scss static/css/main.css
 
+# 依照assets下的檔案自動產生的頁面們
+content: content/組織章程 content/calendar
+
 # 自動為assets下每個行事曆的檔案產生一個頁面
 .PHONY: content/calendar
 content/calendar: static/assets/calendar
@@ -53,4 +56,6 @@ content/calendar: static/assets/calendar
 content/組織章程: static/assets/組織章程
 	for f in static/assets/組織章程/*.pdf; do printf -- "---\ntitle: %s 組織章程\n---" $$(basename "$$f" .pdf) > content/組織章程/$$(basename $$f .pdf).md; done
 
-content: content/組織章程 content/calendar
+js:
+	mkdir -p static/js/
+	cp node_modules/medium-zoom/dist/medium-zoom.min.js static/js/

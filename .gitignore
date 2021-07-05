@@ -11,3 +11,5 @@ content/calendar/*.md
 content/組織章程/*.md
 !content/組織章程/_index.md
 !content/組織章程/README.md
+
+/static/js/*.min.js
