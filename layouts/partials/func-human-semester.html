@@ -1,0 +1,11 @@
+<!-- prettier-ignore -->
+{{ $input := . }}
+{{ $year := index (split $input "-") 0 }}
+{{ $semester := index (split $input "-") 1 }}
+{{ if (eq $semester "1") }}
+  {{ $semester = "一" }}
+{{ else }}
+  {{ $semester = "二" }}
+{{ end }}
+
+{{ return printf "%s學年度第%s學期" $year $semester }}

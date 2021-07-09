@@ -1,12 +1,8 @@
-# Partials
+* Partials
 
 類似函數的東西。
 
-像這樣用：
-
-```
 {{partial "cura" (dict "ctx" . "href" "/about/" "text" "關於")}}
-```
 
 這會使用這個資料夾裡叫做cura.html的partial。
 

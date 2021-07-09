@@ -18,7 +18,7 @@ watch-css:
 # 的內容，如果有改變的話就會重新輸出到public/去。跟上面一樣，平常它也
 # 是輸出一次就結束了。
 watch-hugo: content js
-	hugo server
+	hugo server --disableFastRender
 
 # 這也是開發用。concurrently是一個同時執行後面指令的程式。這樣開發時只
 # 要 make serve 就可以在編輯原始碼的時候同時在網頁裡看到新的改變。
