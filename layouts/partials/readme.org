@@ -2,8 +2,52 @@
 
 類似函數的東西。
 
-{{partial "cura" (dict "ctx" . "href" "/about/" "text" "關於")}}
+- cura ::
 
-這會使用這個資料夾裡叫做cura.html的partial。
+  #+begin_src go-html-template
+  {{partial "cura" (dict "ctx" . "href" "/about/" "text" "關於")}}
+  #+end_src
 
-這個partial的用意是要讓目前正在看的頁面的選項變成粗體。
+  讓符合目前正在看的頁面的選項變成粗體。
+
+  =(dict …)= 是給 /cura/ 這個partial的輸入值，以 ~<鍵> <值> <鍵> <值> …~ 的方式寫。
+
+- pdf ::
+
+  #+begin_src go-text-template
+  {{partial "pdf" "/assets/calendar/109-2.pdf"}}
+  #+end_src
+
+  這個例子會把 =/assets/calendar/109-2.pdf= 嵌入在目前的頁面裡。
+
+  這個partial只需要一個輸入值，所以我寫的時候讓它不用用 =(dict …)= 來傳輸入值。
+
+- card ::
+
+  #+begin_src go-html-template
+  {{partial "card" .}}
+  #+end_src
+
+  產生一個看起來像是一張卡片，連結到輸入值頁面的連結。
+
+  =.= 指的是「目前的頁面」，通常會這樣用：
+
+  #+begin_src go-html-template
+  <ul>
+    {{ range .Pages }}
+    <li>{{ partial "card" . }}</li>
+    {{ end }}
+  </ul>
+  #+end_src
+
+  這會使用[[https://gohugo.io/functions/range/][range函數]]，為 =.Pages= 下的每一個頁面產生一個卡片連結。
+
+- func-human-semester ::
+
+  我習慣把真的純粹是函數的partial以“func-”開頭來命名。
+
+  #+begin_src go-text-template
+  {{partial "func-human-semester" "109-2"}}
+  #+end_src
+
+  這會回傳「109學年度第二學期」。
