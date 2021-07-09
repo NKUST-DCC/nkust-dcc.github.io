@@ -4,12 +4,7 @@
   {{.Content}}
   <ul class="cards">
     {{ range .Pages }}
-    <li>
-      <a class="card" href="{{.Permalink}}">
-        <img src='{{ or .Params.cover "/assets/20210505/_MG_4277.JPG" }}' />
-        <span>{{.Title}}</span>
-      </a>
-    </li>
+    <li>{{ partial "card" . }}</li>
     {{ end }}
   </ul>
 </section>

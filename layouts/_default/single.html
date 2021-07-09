@@ -9,4 +9,17 @@
   </ul>
   {{.Content}}
 </article>
+<div id="prev-and-next">
+  <hr />
+  <div>
+    <!-- prettier-ignore -->
+    {{with .Prev}}
+    <div class="prev">{{partial "card" .}}</div>
+    {{end}}
+    <!-- prettier-ignore -->
+    {{with .Next}}
+    <div class="next">{{partial "card" .}}</div>
+    {{end}}
+  </div>
+</div>
 {{ end }}
