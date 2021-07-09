@@ -1,4 +1,5 @@
 @use "sass:color";
+@import "utility";
 
 $cjk-fallback: "Noto Sans CJK TC", "Microsoft Jhenghei";
 
@@ -86,14 +87,6 @@ body {
     flex-grow: 1;
     margin: 3rem 15%;
     display: flex;
-    article,
-    section {
-      flex-grow: 1;
-    }
-    aside {
-      margin-left: 2rem;
-      width: 20rem;
-    }
   }
   & > footer {
     // 用padding才會保持完全從左到右的背景顏色
