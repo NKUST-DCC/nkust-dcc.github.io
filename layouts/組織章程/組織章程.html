@@ -13,15 +13,17 @@
 {{ $this = .File.BaseFileName }}
 {{ end }}
 
-<article>
+<div class="two-columns">
   <article>{{partial "pdf" (printf "/assets/組織章程/%s.pdf" $this)}}</article>
-</article>
-<aside>
-  <ul>
-    <!-- prettier-ignore -->
-    {{ range (sort (where .Site.RegularPages "Section" "組織章程") "Title" "desc")}}
-    <li>{{ partial "cura" (dict "ctx" $ "href" .Permalink "text" .Title) }}</li>
-    {{ end }}
-  </ul>
-</aside>
+  <aside>
+    <ul>
+      <!-- prettier-ignore -->
+      {{ range (sort (where .Site.RegularPages "Section" "組織章程") "Title" "desc")}}
+      <li>
+        {{ partial "cura" (dict "ctx" $ "href" .Permalink "text" .Title) }}
+      </li>
+      {{ end }}
+    </ul>
+  </aside>
+</div>
 {{ end }}

@@ -13,13 +13,21 @@
 {{ $this = .File.BaseFileName }}
 {{ end }}
 
-<article>{{partial "pdf" (printf "/assets/calendar/%s.pdf" $this)}}</article>
-<aside>
-  <ul>
+<div class="two-columns">
+  <article>
     <!-- prettier-ignore -->
-    {{ range (sort (where .Site.RegularPages "Section" "calendar") "Title" "desc")}}
-    <li>{{ partial "cura" (dict "ctx" $ "href" .Permalink "text" .Title) }}</li>
-    {{ end }}
-  </ul>
-</aside>
+    <img class="rounded-shadow constrain-width"
+           src="{{printf "/assets/calendar/%s.png" $this}}">
+  </article>
+  <aside>
+    <ul>
+      <!-- prettier-ignore -->
+      {{ range (sort (where .Site.RegularPages "Section" "calendar") "Title" "desc")}}
+      <li>
+        {{ partial "cura" (dict "ctx" $ "href" .Permalink "text" .Title) }}
+      </li>
+      {{ end }}
+    </ul>
+  </aside>
+</div>
 {{ end }}
