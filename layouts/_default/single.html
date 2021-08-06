@@ -10,19 +10,22 @@
   {{.Content}}
 </article>
 {{ if (eq .Section "posts") }}
-<div id="prev-and-next">
-  <hr />
-  <div>
+<div class="mt-4 mb-0">
+  <hr class="mx-0 my-12" />
+  <div class="flex gap-x-8">
     <!-- prettier-ignore -->
     {{with .PrevInSection}}
-    <div class="prev">{{partial "card" .}}</div>
-    {{else}}
-    <!-- Bump to the right -->
-    <div></div>
+    <!-- prettier-ignore -->
+    <div class="w-1/2">
+      {{ partial "card" . }}
+    </div>
     {{end}}
     <!-- prettier-ignore -->
     {{with .NextInSection}}
-    <div class="next">{{partial "card" .}}</div>
+    <!-- prettier-ignore -->
+    <div class="w-1/2 text-right">
+      {{ partial "card" . }}
+    </div>
     {{end}}
   </div>
 </div>

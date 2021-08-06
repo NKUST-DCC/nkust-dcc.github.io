@@ -4,6 +4,7 @@
   },
   "dependencies": {
     "medium-zoom": "^1.0.6",
-    "sass": "^1.35.1"
+    "sass": "^1.35.1",
+    "tailwindcss": "^2.2.7"
   }
 }

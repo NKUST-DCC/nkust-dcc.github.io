@@ -14,6 +14,9 @@ clean:
 watch-css:
 	npx sass --no-source-map static/css/main.scss static/css/main.css --watch
 
+tailwind-watch:
+	npx tailwindcss -o static/css/tailwind.css --watch
+
 # 開發用。hugo server會監視各個資料夾(static/、layouts/、content/等等)
 # 的內容，如果有改變的話就會重新輸出到public/去。跟上面一樣，平常它也
 # 是輸出一次就結束了。

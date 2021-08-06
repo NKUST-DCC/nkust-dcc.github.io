@@ -2,6 +2,7 @@ public
 
 node_modules/
 static/css/main.css
+static/css/tailwind.css
 *.map
 
 content/calendar/*.md
