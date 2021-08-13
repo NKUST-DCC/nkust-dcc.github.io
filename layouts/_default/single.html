@@ -14,11 +14,14 @@
   <hr />
   <div>
     <!-- prettier-ignore -->
-    {{with .Prev}}
+    {{with .PrevInSection}}
     <div class="prev">{{partial "card" .}}</div>
+    {{else}}
+    <!-- Bump to the right -->
+    <div></div>
     {{end}}
     <!-- prettier-ignore -->
-    {{with .Next}}
+    {{with .NextInSection}}
     <div class="next">{{partial "card" .}}</div>
     {{end}}
   </div>
