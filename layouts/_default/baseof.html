@@ -32,9 +32,9 @@
     <link rel="stylesheet" href="/css/tailwind.css" />
     <link rel="stylesheet" href="/css/main.css" />
   </head>
-  <body class="flex flex-col min-h-screen m-[5%] md:m-auto">
+  <body class="flex flex-col min-h-screen m-auto text-base">
     <!-- Header -->
-    <header class="font-bold md:mb-8">
+    <header class="mx-[5%] font-bold md:mb-8 header">
       <div
         id="logo"
         class="
@@ -50,7 +50,7 @@
           src="/icon.png"
           alt="Icon"
         />
-        <h1 class="font-light text-4xl md:text-5xl">
+        <h1 class="text-lg md:text-5xl">
           <span class="inline-block">高科大</span
           ><span class="inline-block">夢想漫研社</span>
         </h1>
@@ -58,7 +58,7 @@
       <nav>
         <ul
           class="
-            text-xl
+            text-lg
             list-none
             md:w-3/4
             md:max-w-3xl
@@ -98,22 +98,16 @@
         </ul>
       </nav>
     </header>
-    <main
-      class="
-        flex-grow flex-col
-        md:flex-row
-        my-12
-        md:m-[5%]
-        xl:my-12 xl:mx-[15%]
-      "
-    >
+    <main class="flex-grow flex-col md:flex-row mx-[5%] my-8 xl:mx-[15%]">
       <!-- Contents -->
       {{ block "main" . }} {{ end }}
     </main>
     <!-- Footer -->
-    <footer>
-      <h1>聯絡資訊</h1>
-      <dl>
+    <footer
+      class="bg-b-dark text-white px-[5%] py-4 md:px-[10%] md:py-8 footer"
+    >
+      <h1 class="text-base">聯絡資訊</h1>
+      <dl class="mb-4">
         <dt>社團辦公室</dt>
         <dd>高雄科技大學第一校區活動中心三樓</dd>
         <dt>Twitter</dt>

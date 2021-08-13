@@ -1,4 +1,22 @@
-<a class="card" href="{{.Permalink}}">
-  <img src='{{ or .Params.cover "/assets/20210505/_MG_4277.JPG" }}' />
-  <span>{{.Title}}</span>
+<a
+  class="
+    shadow
+    bg-a
+    text-a-dark
+    flex flex-col
+    rounded-lg
+    h-60
+    transition-all
+    duration-200
+    ease
+    card
+    hover:no-underline hover:shadow-md
+  "
+  href="{{.Permalink}}"
+>
+  <img
+    class="w-full h-4/5 object-cover rounded-t-lg"
+    src='{{ or .Params.cover "/assets/20210505/_MG_4277.JPG" }}'
+  />
+  <span class="mx-4 my-2">{{.Title}}</span>
 </a>
