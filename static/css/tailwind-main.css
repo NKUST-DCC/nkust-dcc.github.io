@@ -89,15 +89,12 @@
   }
   ul.cards {
     @apply p-0 mt-4 mb-8;
+    @apply grid;
+    @apply grid-cols-1 md:grid-cols-2;
     list-style: none;
-    display: flex;
-    flex-wrap: wrap;
     gap: 2rem;
     li {
-      width: 45%;
-      @media (max-width: 700px) {
-        width: 100%;
-      }
+      width: 100%;
     }
   }
 }
