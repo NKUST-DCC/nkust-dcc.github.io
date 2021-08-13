@@ -5,6 +5,26 @@
 @tailwind utilities;
 
 @layer base {
+  aside {
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    a {
+      @apply inline-block w-full;
+      @apply text-b-dark;
+      @apply font-bold;
+      @apply my-2 py-2 px-4;
+      @apply rounded;
+      @apply shadow;
+      @apply transition-all duration-200 ease-in-out;
+      opacity: 0.7;
+      &:hover,
+      &.current {
+        opacity: 1;
+      }
+    }
+  }
   html {
     @apply font-sans;
   }
@@ -13,6 +33,10 @@
   }
   h1 {
     @apply text-xl font-bold;
+    @apply mt-8 mb-8;
+    @apply text-decoration text-decoration-underline text-decoration-a-500;
+    text-underline-offset: 0.5rem;
+    text-decoration-thickness: 0.25rem;
   }
   h2 {
     @apply text-xl;
@@ -34,6 +58,12 @@
     }
     &:focus {
       @apply outline-a;
+    }
+  }
+  article {
+    img {
+      @apply shadow mt-2 mb-6 mr-4;
+      max-width: 40%;
     }
   }
 }
@@ -59,6 +89,9 @@
 }
 
 @layer components {
+  .btn {
+    @apply inline-block bg-b-dark text-white rounded-xl my-4 p-4 shadow;
+  }
   .header {
     a {
       @apply transition-opacity duration-200 ease-in-out;
@@ -78,16 +111,13 @@
     }
   }
   ul.cards {
-    @apply p-0 mt-4 mb-8;
+    @apply p-0 my-8;
+    @apply grid;
+    @apply grid-cols-1 md:grid-cols-2;
     list-style: none;
-    display: flex;
-    flex-wrap: wrap;
     gap: 2rem;
     li {
-      width: 45%;
-      @media (max-width: 700px) {
-        width: 100%;
-      }
+      width: 100%;
     }
   }
 }
