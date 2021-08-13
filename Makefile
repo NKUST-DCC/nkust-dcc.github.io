@@ -14,7 +14,8 @@ clean:
 watch-css:
 	npx sass --no-source-map static/css/main.scss static/css/main.css --watch
 
-tailwind-watch:
+# 暫時的，之後會拿掉sass只留tailwind
+watch-tailwind:
 	npx tailwindcss --postcss -i static/css/tailwind-main.css -o static/css/tailwind.css --watch
 
 # 開發用。hugo server會監視各個資料夾(static/、layouts/、content/等等)
@@ -26,7 +27,7 @@ watch-hugo: content js
 # 這也是開發用。concurrently是一個同時執行後面指令的程式。這樣開發時只
 # 要 make serve 就可以在編輯原始碼的時候同時在網頁裡看到新的改變。
 serve:
-	npx concurrently "make watch-css" "make watch-hugo" "make tailwind-watch"
+	npx concurrently "make watch-css" "make watch-hugo" "make watch-tailwind"
 
 # 產生 public.zip 的方法：先產生 public，然後用 7z 把它的內容壓縮成 public.zip。
 public.zip: public
@@ -35,7 +36,7 @@ public.zip: public
 # 產生 public (資料夾)的方法：先產生 static/css/main.css，然後執行hugo --minify
 # 單跑 hugo 指令就會把網站內容輸出到 public 這個資料夾下。--minify告訴
 # 它請 Hugo 把輸出的 HTML 清乾淨一點。
-public: static/css/main.css content js
+public: static/css/main.css static/css/tailwind.css content js
 	hugo --minify
 
 # 產生 static/css/main.css 的方法：先產生 static/css/main.scss，然後叫
@@ -46,6 +47,9 @@ public: static/css/main.css content js
 # 它。
 static/css/main.css: static/css/main.scss
 	npx sass --no-source-map static/css/main.scss static/css/main.css
+
+static/css/tailwind.css: static/css/tailwind-main.css
+	npx tailwindcss --minify --postcss -i static/css/tailwind-main.css -o static/css/tailwind.css
 
 # 依照assets下的檔案自動產生的頁面們
 content: content/組織章程 content/calendar
