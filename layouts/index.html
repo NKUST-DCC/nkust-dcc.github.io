@@ -1,5 +1,8 @@
 {{define "main"}}
 <article>{{.Content}}</article>
+<div class="text-center">
+  <a class="btn" href="/join">加入社團</a>
+</div>
 <h1>最近活動</h1>
 <ul class="cards">
   <!-- prettier-ignore -->
@@ -7,4 +10,7 @@
   <li>{{ partial "card" . }}</li>
   {{ end }}
 </ul>
+<div class="text-center">
+  <a class="btn" href="/tags/社團活動">更多活動記錄</a>
+</div>
 {{end}}

@@ -69,6 +69,9 @@
 }
 
 @layer components {
+  .btn {
+    @apply inline-block bg-b-dark text-white rounded-xl my-4 p-4 shadow;
+  }
   .header {
     a {
       @apply transition-opacity duration-200 ease-in-out;
@@ -88,7 +91,7 @@
     }
   }
   ul.cards {
-    @apply p-0 mt-4 mb-8;
+    @apply p-0 my-8;
     @apply grid;
     @apply grid-cols-1 md:grid-cols-2;
     list-style: none;
