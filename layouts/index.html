@@ -1,3 +1,10 @@
 {{define "main"}}
 <article>{{.Content}}</article>
+<h1>最近活動</h1>
+<ul class="cards">
+  <!-- prettier-ignore -->
+  {{ range (first 4 (where .Site.RegularPages "Params.tags" "intersect" (slice "社團活動"))) }}
+  <li>{{ partial "card" . }}</li>
+  {{ end }}
+</ul>
 {{end}}
