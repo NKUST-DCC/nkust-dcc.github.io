@@ -29,50 +29,85 @@
       href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="/css/tailwind.css" />
     <link rel="stylesheet" href="/css/main.css" />
   </head>
-  <body>
+  <body class="flex flex-col min-h-screen m-auto text-base">
     <!-- Header -->
-    <header>
-      <div id="logo">
-        <img src="/icon.png" alt="Icon" />
-        <h1><span>高科大</span><span>夢想漫研社</span></h1>
+    <header class="mx-[5%] font-bold md:mb-8 header">
+      <div
+        id="logo"
+        class="
+          flex
+          gap-x-4
+          justify-start
+          my-4
+          md:justify-center md:items-center md:mt-16 md:mb-12
+        "
+      >
+        <img
+          class="hidden md:block max-h-16 text-2xl"
+          src="/icon.png"
+          alt="Icon"
+        />
+        <h1 class="text-lg md:text-5xl">
+          <span class="inline-block">高科大</span
+          ><span class="inline-block">夢想漫研社</span>
+        </h1>
       </div>
       <nav>
-        <ul>
-          <li>{{ partial "cura" (dict "ctx" . "href" "/" "text" "首頁") }}</li>
-          <li>
+        <ul
+          class="
+            text-lg
+            list-none
+            md:w-3/4
+            md:max-w-3xl
+            md:flex
+            md:items-end
+            md:justify-between
+            md:my-0
+            md:mx-auto
+          "
+        >
+          <li class="md:inline-block">
+            {{ partial "cura" (dict "ctx" . "href" "/" "text" "首頁") }}
+          </li>
+          <li class="md:inline-block">
             <!-- prettier-ignore -->
             {{ partial "cura" (dict "ctx" . "href" "/about/" "text" "認識我們")}}
           </li>
-          <li>
+          <li class="md:inline-block">
             <!-- prettier-ignore -->
             {{ partial "cura" (dict "ctx" . "href" "/tags/社團活動/" "text" "社團活動")}}
           </li>
-          <li>
+          <li class="md:inline-block">
             <!-- prettier-ignore -->
             {{ partial "cura" (dict "ctx" . "href" "/calendar/" "text" "行事曆")}}
           </li>
-          <li>
+          <li class="md:inline-block">
             <!-- prettier-ignore -->
             {{ partial "cura" (dict "ctx" . "href" "/join/" "text" "入社") }}
           </li>
-          <li><a href="https://twitter.com/DreamsComiC8763">Twitter</a></li>
-          <li>
+          <li class="md:inline-block">
+            <a href="https://twitter.com/DreamsComiC8763">Twitter</a>
+          </li>
+          <li class="md:inline-block">
             <!-- prettier-ignore -->
             {{ partial "cura" (dict "ctx" . "href" "/組織章程/" "text" "組織章程") }}
           </li>
         </ul>
       </nav>
     </header>
-    <main>
+    <main class="flex-grow flex-col md:flex-row mx-[5%] my-8 xl:mx-[15%]">
       <!-- Contents -->
       {{ block "main" . }} {{ end }}
     </main>
     <!-- Footer -->
-    <footer>
-      <h1>聯絡資訊</h1>
-      <dl>
+    <footer
+      class="bg-b-dark text-white px-[5%] py-4 md:px-[10%] md:py-8 footer"
+    >
+      <h1 class="text-base">聯絡資訊</h1>
+      <dl class="mb-4">
         <dt>社團辦公室</dt>
         <dd>高雄科技大學第一校區活動中心三樓</dd>
         <dt>Twitter</dt>

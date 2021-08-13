@@ -14,6 +14,9 @@ clean:
 watch-css:
 	npx sass --no-source-map static/css/main.scss static/css/main.css --watch
 
+tailwind-watch:
+	npx tailwindcss --postcss -i static/css/tailwind-main.css -o static/css/tailwind.css --watch
+
 # 開發用。hugo server會監視各個資料夾(static/、layouts/、content/等等)
 # 的內容，如果有改變的話就會重新輸出到public/去。跟上面一樣，平常它也
 # 是輸出一次就結束了。
@@ -23,7 +26,7 @@ watch-hugo: content js
 # 這也是開發用。concurrently是一個同時執行後面指令的程式。這樣開發時只
 # 要 make serve 就可以在編輯原始碼的時候同時在網頁裡看到新的改變。
 serve:
-	npx concurrently "make watch-css" "make watch-hugo"
+	npx concurrently "make watch-css" "make watch-hugo" "make tailwind-watch"
 
 # 產生 public.zip 的方法：先產生 public，然後用 7z 把它的內容壓縮成 public.zip。
 public.zip: public
