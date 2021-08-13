@@ -43,7 +43,8 @@ module.exports = {
       colors: {
         inherit: "inherit",
         a: "#e1c2bd",
-        "a-dark": "#552d27",
+        "a-500": "#b16154",
+        "a-900": "#552d27",
         b: "#91d6c3",
         "b-dark": "#38967c",
         white: "#f8f6f7",
@@ -54,5 +55,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require("@downwindcss/text-decoration")],
 };

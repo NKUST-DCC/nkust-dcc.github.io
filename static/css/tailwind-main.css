@@ -13,6 +13,10 @@
   }
   h1 {
     @apply text-xl font-bold;
+    @apply mt-8 mb-8;
+    @apply text-decoration text-decoration-underline text-decoration-a-500;
+    text-underline-offset: 0.5rem;
+    text-decoration-thickness: 0.25rem;
   }
   h2 {
     @apply text-xl;
@@ -34,6 +38,12 @@
     }
     &:focus {
       @apply outline-a;
+    }
+  }
+  article {
+    img {
+      @apply shadow mt-2 mb-6 mr-4;
+      max-width: 40%;
     }
   }
 }
