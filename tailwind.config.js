@@ -35,6 +35,7 @@ module.exports = {
       boxShadow: {
         DEFAULT: "0 0 0.5rem #00000070",
         md: "0 0 1rem #00000070",
+        white: "0 0 0.5rem #f8f6f7",
       },
       outline: {
         a: "0.25rem solid #b16154",
