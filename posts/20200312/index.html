@@ -39,27 +39,25 @@
 <link rel=stylesheet href=/css/built.css>
 </head>
 <body class="flex flex-col min-h-screen m-auto text-base">
-<header class="mx-[5%] font-bold md:mb-8 header">
+<header class="h-[32rem] md:h-[26rem] font-bold md:mb-8 header mx-main">
 <div id=logo class="flex
 gap-x-4
 justify-start
-my-4
-md:justify-center md:items-center md:mt-16 md:mb-12">
+mt-4 mb-0
+pl-2
+-ml-2
+md:items-center md:mt-16 md:mb-12">
 <img class="hidden md:block max-h-16 text-2xl" src=/icon.png alt=Icon>
-<h1 class="text-lg md:text-5xl">
+<h1 class="mt-4 mb-0 text-2xl md:text-5xl">
 <span class=inline-block>高科大</span><span class=inline-block>夢想漫研社</span>
 </h1>
 </div>
-<nav>
+<nav class="md:pl-2
+md:-ml-2">
 <ul class="text-lg
 list-none
-md:w-3/4
-md:max-w-3xl
-md:flex
-md:items-end
-md:justify-between
-md:my-0
-md:mx-auto">
+rounded
+md:w-full md:max-w-3xl md:flex md:items-end md:justify-between">
 <li class=md:inline-block>
 <a href=/>首頁</a>
 </li>
@@ -84,7 +82,7 @@ md:mx-auto">
 </ul>
 </nav>
 </header>
-<main class="flex-grow flex-col md:flex-row mx-[5%] my-8 xl:mx-[15%]">
+<main class="flex-grow flex-col md:flex-row mx-main my-8">
 <article>
 <h1>109.03.12 期初社員大會</h1>
 <ul>
@@ -129,8 +127,8 @@ hover:no-underline hover:shadow-md" href=https://nkust-dcc.github.io/posts/20200
 </div>
 </div>
 </main>
-<footer class="bg-b-dark text-white px-[5%] py-4 md:px-[10%] md:py-8 footer">
-<h1 class=text-base>聯絡資訊</h1>
+<footer class="bg-b-dark text-white py-8 footer">
+<div class=mx-main>
 <dl class=mb-4>
 <dt>社團辦公室</dt>
 <dd>高雄科技大學第一校區活動中心三樓</dd>
@@ -142,6 +140,7 @@ hover:no-underline hover:shadow-md" href=https://nkust-dcc.github.io/posts/20200
 <p>
 © 2021 高雄科技大學（第一校區）夢想漫研社。版權所有；<a href=https://github.com/NKUST-DCC/nkust-dcc.github.io>程式碼依MIT授權條款釋出</a>。
 </p>
+</div>
 </footer>
 <script type=text/javascript src=/js/medium-zoom.min.js></script>
 <script>mediumZoom("article img, figure img",{background:"#00000050",margin:20})</script>

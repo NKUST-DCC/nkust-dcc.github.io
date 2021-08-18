@@ -40,27 +40,45 @@
 <link rel=stylesheet href=/css/built.css>
 </head>
 <body class="flex flex-col min-h-screen m-auto text-base">
-<header class="mx-[5%] font-bold md:mb-8 header">
-<div id=logo class="flex
+<header class="h-[32rem] md:h-[26rem] font-bold md:mb-8 header mx-main">
+<div class="absolute w-full inset-0 z-[-1]">
+<img class="h-[32rem] md:h-[26rem] w-full object-cover" src=/assets/20210505/_MG_4355.JPG>
+</div>
+<div class="absolute
+w-full
+right-0
+bottom-0
+left-0
+top-[24rem]
+md:top-[18rem]
+z-[-1]">
+<div class="bg-gradient-to-b
+from-transparent
+to-white
+h-32
+w-full
+object-cover"></div>
+</div>
+<div id=logo class="legible-on-image
+flex
 gap-x-4
 justify-start
-my-4
-md:justify-center md:items-center md:mt-16 md:mb-12">
+mt-4 mb-0
+pl-2
+-ml-2
+md:items-center md:mt-16 md:mb-12">
 <img class="hidden md:block max-h-16 text-2xl" src=/icon.png alt=Icon>
-<h1 class="text-lg md:text-5xl">
+<h1 class="mt-4 mb-0 text-2xl md:text-5xl">
 <span class=inline-block>高科大</span><span class=inline-block>夢想漫研社</span>
 </h1>
 </div>
-<nav>
+<nav class="legible-on-image
+md:pl-2
+md:-ml-2">
 <ul class="text-lg
 list-none
-md:w-3/4
-md:max-w-3xl
-md:flex
-md:items-end
-md:justify-between
-md:my-0
-md:mx-auto">
+rounded
+md:w-full md:max-w-3xl md:flex md:items-end md:justify-between">
 <li class=md:inline-block>
 <a class=current href=/>首頁</a>
 </li>
@@ -85,9 +103,8 @@ md:mx-auto">
 </ul>
 </nav>
 </header>
-<main class="flex-grow flex-col md:flex-row mx-[5%] my-8 xl:mx-[15%]">
-<article><p><img src=/assets/20210505/_MG_4355.JPG alt=20210505合照></p>
-<p>大家好！歡迎來到高科大的夢想漫研社！我們誠心歡迎喜歡ACGN的同好們加入喔！</p>
+<main class="flex-grow flex-col md:flex-row mx-main my-8">
+<article><p>歡迎來到夢想漫研社！</p>
 <p>我們每週二晚上7點有社課時間，有專業的老師來教授繪畫技巧！每週三晚上7點是我們的社集，提供大家一個放鬆交流討論的時間！</p>
 <p>每個學期都會有一次文庫展，讓大家來分享自己的收藏！期中考後還會舉辦一次<a href=/tags/%E6%AD%8C%E8%AC%A0%E7%A5%AD>歌謠祭</a>，大家會唱動畫插入曲、V家、U家、Vtuber的歌等等，若有興趣歡迎你的加入！</p>
 </article>
@@ -161,8 +178,8 @@ hover:no-underline hover:shadow-md" href=https://nkust-dcc.github.io/posts/20210
 <a class=btn href=/tags/社團活動>更多活動記錄</a>
 </div>
 </main>
-<footer class="bg-b-dark text-white px-[5%] py-4 md:px-[10%] md:py-8 footer">
-<h1 class=text-base>聯絡資訊</h1>
+<footer class="bg-b-dark text-white py-8 footer">
+<div class=mx-main>
 <dl class=mb-4>
 <dt>社團辦公室</dt>
 <dd>高雄科技大學第一校區活動中心三樓</dd>
@@ -174,6 +191,7 @@ hover:no-underline hover:shadow-md" href=https://nkust-dcc.github.io/posts/20210
 <p>
 © 2021 高雄科技大學（第一校區）夢想漫研社。版權所有；<a href=https://github.com/NKUST-DCC/nkust-dcc.github.io>程式碼依MIT授權條款釋出</a>。
 </p>
+</div>
 </footer>
 <script type=text/javascript src=/js/medium-zoom.min.js></script>
 <script>mediumZoom("article img, figure img",{background:"#00000050",margin:20})</script>
