@@ -1,9 +1,13 @@
 {{define "main"}}
-<article>{{.Content}}</article>
-<div class="text-center">
-  <a class="btn" href="/join">加入社團</a>
+<div class="flex gap-x-8">
+  <div class="w-1/2">{{ partial "youtube" "j_jYGrm0USQ" }}</div>
+  <div class="w-1/2">
+    {{.Content}}
+    <a class="btn" href="/join">加入社團</a>
+  </div>
 </div>
-<h1>最近活動</h1>
+<div class="text-center"></div>
+<h1 class="mt-8">最近活動</h1>
 <ul class="cards">
   <!-- prettier-ignore -->
   {{ range (first 4 (where .Site.RegularPages "Params.tags" "intersect" (slice "社團活動"))) }}
