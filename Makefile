@@ -3,7 +3,7 @@
 export LANG=en_US.UTF-8
 
 # 告訴 Make "clean" 等等不是檔案，只是一個指令。
-.PHONY: clean watch-css watch-hugo serve
+.PHONY: clean dev-css dev-hugo dev js
 
 # 方便用。用 make clean 把所有 git 忽略掉的檔案清掉。
 clean:
@@ -11,19 +11,19 @@ clean:
 
 # 開發用。tailwind 的 --watch 模式代表它會監視 src.css 有沒有改變，如
 # 果有的話就產生一個新的版本。不然平常產生一次之後就結束了。
-watch-css:
+dev-css:
 	npx tailwindcss --postcss -i static/css/src.css -o static/css/built.css --watch
 
 # 開發用。hugo server會監視各個資料夾(static/、layouts/、content/等等)
 # 的內容，如果有改變的話就會重新輸出到public/去。跟上面一樣，平常它也
 # 是輸出一次就結束了。
-watch-hugo: content js
+dev-hugo: content js
 	hugo server --disableFastRender
 
 # 這也是開發用。concurrently是一個同時執行後面指令的程式。這樣開發時只
-# 要 make serve 就可以在編輯原始碼的時候同時在網頁裡看到新的改變。
-serve:
-	npx concurrently "make watch-css" "make watch-hugo"
+# 要 make dev 就可以在編輯原始碼的時候同時在網頁裡看到新的改變。
+dev:
+	npx concurrently "make dev-css" "make dev-hugo"
 
 # 產生 public.zip 的方法：先產生 public，然後用 7z 把它的內容壓縮成 public.zip。
 public.zip: public
