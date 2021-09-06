@@ -59,7 +59,7 @@
   }
   article {
     img {
-      @apply shadow mt-2 mb-6 mr-4;
+      @apply inline-block shadow mt-2 mb-6 mr-4;
       max-width: 40%;
     }
   }

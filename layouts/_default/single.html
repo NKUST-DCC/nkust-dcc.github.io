@@ -12,18 +12,18 @@
 {{ if (eq .Section "posts") }}
 <div class="mt-4 mb-0">
   <hr class="mx-0 my-12" />
-  <div class="flex gap-x-8">
+  <div class="flex flex-col md:flex-row gap-8">
     <!-- prettier-ignore -->
     {{with .PrevInSection}}
     <!-- prettier-ignore -->
-    <div class="w-1/2">
+    <div class="md:w-1/2">
       {{ partial "card" . }}
     </div>
     {{end}}
     <!-- prettier-ignore -->
     {{with .NextInSection}}
     <!-- prettier-ignore -->
-    <div class="w-1/2 text-right">
+    <div class="md:w-1/2 md:text-right">
       {{ partial "card" . }}
     </div>
     {{end}}
