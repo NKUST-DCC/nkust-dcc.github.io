@@ -1,8 +1,17 @@
 {{define "main"}}
-<div class="flex gap-x-8">
-  <div class="w-1/2">{{ partial "youtube" "j_jYGrm0USQ" }}</div>
-  <div class="w-1/2">
+<div class="md:flex gap-x-8">
+  <div class="md:w-1/2">
+    <!-- prettier-ignore -->
+    {{ partial "youtube"
+               (dict "id" "8wgBMXWbZAg"
+                     "class" "min-h-[20rem] w-full") }}
+  </div>
+  <div class="md:w-1/2">
     {{.Content}}
+    <a href="https://line.me/R/ti/g/Q8hfWhLF_s">
+      <img src="/assets/line-110.png" alt="LINE QR Code" />
+    </a>
+
     <a class="btn" href="/join">加入社團</a>
   </div>
 </div>
