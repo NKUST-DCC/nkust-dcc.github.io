@@ -13,6 +13,7 @@ markup:
   goldmark:
     renderer:
       hardWraps: true
+      unsafe: true
 
 # 我會用README檔來解釋各個資料夾的意義，但我們不希望這些檔案被輸出。
 ignoreFiles:
