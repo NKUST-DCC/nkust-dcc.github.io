@@ -56,9 +56,6 @@
     &:hover {
       text-decoration: underline;
     }
-    &:focus {
-      @apply outline-a;
-    }
   }
   article {
     img {
@@ -77,6 +74,16 @@
     @apply text-shadow-black text-white;
     a {
       @apply opacity-80;
+      &::after {
+        @apply bg-white;
+      }
+    }
+  }
+  /* 兩個元件各佔50% */
+  .side-by-side {
+    @apply flex;
+    > * {
+      @apply w-1/2;
     }
   }
   .two-columns {
@@ -124,11 +131,14 @@
       @apply tr-all-200;
       color: inherit;
       text-decoration: none;
-      @apply opacity-60;
+      @apply opacity-80;
     }
     .current,
     a:hover {
-      opacity: 1;
+      text-decoration: underline;
+      text-decoration-thickness: 0.25rem;
+      text-underline-offset: 0.5rem;
+      @apply opacity-100;
     }
   }
   .footer {
