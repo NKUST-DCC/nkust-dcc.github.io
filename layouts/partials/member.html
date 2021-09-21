@@ -1,0 +1,21 @@
+<div class="member flex flex-row gap-8">
+  {{ with .photo }}
+  <img class="m-0 w-52 h-52 object-cover" src="{{.}}" />
+  {{ end }}
+  <div>
+    <h2><strong>{{.role}}</strong> {{.name}}</h2>
+    <div class="flex">
+      {{ with .pixiv }}
+      <a href="https://www.pixiv.net/users/{{.}}">
+        {{ partial "simple-icon" "pixiv" }}
+      </a>
+      {{ end }}
+      <!-- prettier-ignore -->
+      {{ with .twitter }}
+      <a href="https://twitter.com/{{.}}">
+        {{ partial "simple-icon" "twitter" }}
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</div>

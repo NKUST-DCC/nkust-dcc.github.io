@@ -1,0 +1,8 @@
+<div class="flex flex-col gap-6">
+  <!-- prettier-ignore -->
+  {{ with (site).Data.幹部 }}
+    {{ range (index . "110") }}
+      {{ partial "member" . }}
+    {{ end }}
+  {{ end }}
+</div>

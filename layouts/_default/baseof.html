@@ -160,8 +160,9 @@
     <script type="text/javascript" src="/js/medium-zoom.min.js"></script>
     <script>
       // This seems to be robust enough without me having to make every
-      // image a figure with a caption.
-      mediumZoom("article img, figure img", {
+      // image a figure with a caption. The :not excludes images
+      // inside a link.
+      mediumZoom("article img:not(a img), figure img", {
         background: "#00000050",
         margin: 20,
       });
