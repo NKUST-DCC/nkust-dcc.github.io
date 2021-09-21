@@ -118,6 +118,11 @@
 }
 
 @layer components {
+  .member {
+    .icon {
+      @apply inline shadow-none w-8 h-8;
+    }
+  }
   .btn {
     @apply inline-block bg-b-dark text-white rounded-xl my-4 p-4 shadow;
     @apply tr-all-200;
