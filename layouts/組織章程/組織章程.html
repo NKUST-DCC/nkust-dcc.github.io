@@ -13,7 +13,10 @@
 {{ $this = .File.BaseFileName }}
 {{ end }}
 
-<div class="two-columns">
+<h1>
+    <a href="{{ printf "/assets/組織章程/%s.pdf" $this }}">{{$this}}.pdf</a>
+</h1>
+<div class="md:two-columns">
   <article>{{partial "pdf" (printf "/assets/組織章程/%s.pdf" $this)}}</article>
   <aside>
     <ul>
