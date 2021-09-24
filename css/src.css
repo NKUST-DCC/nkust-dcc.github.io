@@ -119,8 +119,11 @@
 
 @layer components {
   .member {
+    img {
+      @apply shadow;
+    }
     .icon {
-      @apply inline shadow-none w-8 h-8;
+      @apply inline shadow-none w-6 h-6;
     }
   }
   .btn {
