@@ -13,6 +13,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
+          ssh-key: ${{ secrets.ASSETS_SSH_KEY }}
           submodules: true
       - name: Setup Node
         uses: actions/setup-node@v2
