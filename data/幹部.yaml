@@ -1,12 +1,14 @@
 110:
   - name: 藍豹
     role: 社長
+    photo: /assets/avatar/5AF464D4-2CB9-45F1-957D-B3AE4E967A45.jpg
   - name: 十年
     role: 副社長
   - name: STANA
-    role: 美宣
+    role: 🙏 榮譽美宣
     twitter: Lurid_Stana
     pixiv: 10618865
+    photo: /assets/avatar/80288428_p0_master1200.jpg
   - name: 順茗
     role: 總務
   - name: 如月

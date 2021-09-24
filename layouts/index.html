@@ -15,7 +15,6 @@
     <a class="btn" href="/join">加入社團</a>
   </div>
 </div>
-<div class="text-center"></div>
 <h1 class="mt-8">最近活動</h1>
 <ul class="cards">
   <!-- prettier-ignore -->
@@ -25,5 +24,17 @@
 </ul>
 <div class="text-center">
   <a class="btn" href="/tags/社團活動">更多活動記錄</a>
+</div>
+<h1 class="mt-8">幹部們</h1>
+<div class="flex flex-wrap gap-6">
+  <!-- prettier-ignore -->
+  {{ with (site).Data.幹部 }}
+    {{ range (index . "110") }}
+      {{ partial "member" . }}
+    {{ end }}
+  {{ end }}
+</div>
+<div class="text-center">
+  <a class="btn" href="/about">關於我們</a>
 </div>
 {{end}}
