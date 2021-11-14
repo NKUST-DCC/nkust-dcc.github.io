@@ -48,7 +48,7 @@ module.exports = {
         "a-900": "#552d27",
         b: "#91d6c3",
         "b-dark": "#38967c",
-        white: "#f8f6f7",
+        white: "#ffffff",
         black: "#000000",
       },
     },

@@ -1,5 +1,7 @@
 public
 
+.hugo_build.lock
+
 node_modules/
 static/css/built.css
 *.map

@@ -26,7 +26,7 @@
     }
   }
   html {
-    @apply font-sans;
+    @apply font-sans bg-white;
   }
   dd {
     @apply ml-6;
