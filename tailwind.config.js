@@ -8,9 +8,7 @@ let cjkFallback = [
 ];
 
 module.exports = {
-  purge: ["./layouts/**/*.html", "./content/**/*.md"],
-  mode: "jit",
-  darkMode: false, // or 'media' or 'class'
+  content: ["./layouts/**/*.html", "./content/**/*.md"],
   theme: {
     fontFamily: {
       sans: ["'M PLUS 1p'", ...cjkFallback, "sans-serif"],
@@ -53,8 +51,5 @@ module.exports = {
       },
     },
   },
-  variants: {
-    extend: {},
-  },
-  plugins: [require("@downwindcss/text-decoration")],
+  plugins: [],
 };

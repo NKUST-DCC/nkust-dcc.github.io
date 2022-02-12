@@ -34,7 +34,7 @@
   h1 {
     @apply text-xl font-bold;
     @apply mt-8 mb-8;
-    @apply text-decoration text-decoration-underline text-decoration-a-500;
+    @apply underline decoration-a-500;
     text-underline-offset: 0.5rem;
     text-decoration-thickness: 0.25rem;
   }
