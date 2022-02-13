@@ -7,12 +7,14 @@
 把資料夾 /20211221/ 的圖片縮小到高=1080：
 
 #+begin_src sh :results output
-dir=20211221
+dir=20200907
 du -h "$dir"
 (
   cd "$dir"
   mkdir smaller
-  parallel gm convert '{}' -resize x1080 smaller/'{}' ::: *.jpg
+  parallel magick '{}' -resize x1080 smaller/'{.}'.jpg ::: *.JPG
+  # parallel magick '{}' -resize x1080 smaller/'{.}'.jpg ::: *.HEIC
+  # rm -- *.HEIC
   mv smaller/*.jpg .
   rm smaller -r
 )
