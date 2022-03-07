@@ -8,7 +8,7 @@ cover: /assets/extra/92336058-normal.jpg
 
 這學期的行事曆：
 
-![110-1行事曆](/assets/calendar/110-1.png)
+![110-2行事曆](/assets/calendar/110-2.png)
 
 要入社的話可以先來參加我們的期初茶會和迎新活動，加入新生的LINE群組，社課與社集的地點時間資訊會在那裡更新。
 
