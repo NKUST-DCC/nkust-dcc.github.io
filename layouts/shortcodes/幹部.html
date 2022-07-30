@@ -1,8 +1,7 @@
-<div class="flex flex-col gap-6">
+<ul class="list-none columns-2 gap-4">
   <!-- prettier-ignore -->
   {{ with (site).Data.幹部 }}
-    {{ range (index . "110") }}
-      {{ partial "member" . }}
-    {{ end }}
-  {{ end }}
-</div>
+    {{ range (index . "111") }}
+  <li class="py-2">{{ partial "member" . }}</li>
+  {{ end }} {{ end }}
+</ul>
