@@ -12,7 +12,6 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ["'M PLUS 1p'", ...cjkFallback, "sans-serif"],
-      // serif: ["Equity"],
     },
     extend: {
       fontSize: {
