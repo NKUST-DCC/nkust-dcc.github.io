@@ -1,10 +1,11 @@
-<div class="member flex flex-row gap-8 h-44">
+<div class="member lg:flex lg:flex-row lg:gap-8 lg:h-36 min-h-[2rem]">
   {{ with .photo }}
-  <img class="m-0 w-44 h-44 object-cover" src="{{.}}" />
+  <img class="m-0 w-36 h-36 object-cover mb-4 lg:mb-0" src="{{.}}" />
   {{ end }}
   <div>
-    <h2><strong>{{.role}}</strong> {{.name}}</h2>
-    <div class="flex gap-2">
+    <span class="text-xl font-bold">{{.role}}</span>
+    <span class="text-xl block whitespace-nowrap md:inline">{{.name}}</span>
+    <div class="flex space-x-2">
       {{ with .pixiv }}
       <a href="https://www.pixiv.net/users/{{.}}">
         {{ partial "simple-icon" "pixiv" }}
@@ -14,6 +15,12 @@
       {{ with .twitter }}
       <a href="https://twitter.com/{{.}}">
         {{ partial "simple-icon" "twitter" }}
+      </a>
+      {{ end }}
+      <!-- prettier-ignore -->
+      {{ with .line }}
+      <a href="https://line.me/ti/p/~{{.}}">
+        {{ partial "simple-icon" "line" }}
       </a>
       {{ end }}
     </div>
