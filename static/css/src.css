@@ -99,8 +99,10 @@
     }
   }
   /* <main> 和 <header> 主要內容用的橫向 margin */
-  .mx-main {
-    @apply mx-[5%] xl:mx-[15%];
+  .main-width {
+    width: 95%;
+    max-width: 80rem;
+    @apply mx-auto;
   }
   .constrain-width {
     max-width: 100% !important;

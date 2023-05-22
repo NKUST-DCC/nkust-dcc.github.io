@@ -37,17 +37,33 @@
   </head>
   <body class="flex flex-col min-h-screen m-auto text-base">
     <!-- Header -->
-    <header class="h-[32rem] md:h-[26rem] font-bold md:mb-8 header mx-main">
+    <header class="h-[32rem] md:h-[26rem] font-bold md:mb-8 header main-width">
       {{ with .Params.cover }}
       <div class="absolute w-full inset-0 z-[-1]">
         <img class="h-[32rem] md:h-[26rem] w-full object-cover" src="{{.}}" />
       </div>
       <!-- 漸層；top要是上面header和img的高度減掉8rem(也就是下面的h-32) -->
       <div
-        class="absolute w-full right-0 bottom-0 left-0 top-[24rem] md:top-[18rem] z-[-1]"
+        class="
+          absolute
+          w-full
+          right-0
+          bottom-0
+          left-0
+          top-[24rem]
+          md:top-[18rem]
+          z-[-1]
+        "
       >
         <div
-          class="bg-gradient-to-b from-transparent to-white h-32 w-full object-cover"
+          class="
+            bg-gradient-to-b
+            from-transparent
+            to-white
+            h-32
+            w-full
+            object-cover
+          "
         ></div>
       </div>
       {{ end }}
@@ -81,7 +97,12 @@
           md:-ml-2"
       >
         <ul
-          class="text-lg list-none rounded md:w-full md:max-w-3xl md:flex md:justify-between"
+          class="
+            text-lg
+            list-none
+            rounded
+            md:w-full md:max-w-3xl md:flex md:justify-between
+          "
         >
           <li class="md:inline-block">
             {{ partial "cura" (dict "ctx" . "href" "/" "text" "首頁") }}
@@ -112,13 +133,13 @@
         </ul>
       </nav>
     </header>
-    <main class="grow flex-col md:flex-row mx-main my-8">
+    <main class="grow flex-col md:flex-row main-width my-8">
       <!-- Contents -->
       {{ block "main" . }} {{ end }}
     </main>
     <!-- Footer -->
     <footer class="bg-b-dark text-white py-8 footer">
-      <div class="mx-main">
+      <div class="main-width">
         <dl class="mb-4">
           <dt>社團辦公室</dt>
           <dd>高雄科技大學第一校區活動中心三樓</dd>
