@@ -29,15 +29,15 @@ jobs:
           submodules: true
       - name: Setup Pages
         uses: actions/configure-pages@v3
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
       - name: Install Node
         uses: actions/setup-node@v2
         with:
           node-version: "18"
           cache: "pnpm"
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
       - name: Install Hugo
         uses: peaceiris/actions-hugo@v2
         with:
