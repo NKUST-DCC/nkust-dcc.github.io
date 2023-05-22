@@ -7,19 +7,22 @@
 把資料夾 /20211221/ 的圖片縮小到高=1080：
 
 #+begin_src sh :results output
-for dir in 1110927社課/ 1110929社集/ 1111003社團嘉年華/ 1111004社課/ 1111006新生茶會/ 1111011社課/ 1111012聚餐/ 1111013社集/ 1111018文庫展/ 1111020社集/ 1111025社課/ 1111027社集/ 1111117社集/ 1111122社課/ 1111124歌謠祭/ 1111129社課/ 1111201社集/ 1111206社課/ 1111208社集/ 1111213社課/ 1111215期末聚餐/ 1111220期末社員大會/
+for dir in 1120309社集 1120314社課 1120316社集 1120321社課 1120323社集 1120328文庫展 1120330社集 1120425社課 1120427歌謠祭 1120502社課 1120504社集 1120509社課
 do
-du -h "$dir"
+before=$(du -h "$dir")
+echo "$before"
 (
   cd "$dir"
   mkdir smaller
   parallel magick '{}' -resize x1080 smaller/'{.}'.jpg ::: $(find -iregex ".*\.\(jpe?g\|heic\)")
   # parallel magick '{}' -resize x1080 smaller/'{.}'.jpg ::: *.HEIC
-  # rm -- *.HEIC
   mv smaller/*.jpg .
+  find -regex ".*\.\(jpeg\|JPG\|HEIC\)" -exec rm '{}' ';'
   rm smaller -r
 )
-du -h "$dir"
+after=$(du -h "$dir")
+echo "$after"
+notify-send --app-name=Emacs --icon=emacs "Finished compressing $dir." "Before: $before\nAfter: $after"
 done
 #+end_src
 
