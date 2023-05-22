@@ -7,12 +7,12 @@
 把資料夾 /20211221/ 的圖片縮小到高=1080：
 
 #+begin_src sh :results output
-dir=20200907
+dir=20220526
 du -h "$dir"
 (
   cd "$dir"
   mkdir smaller
-  parallel magick '{}' -resize x1080 smaller/'{.}'.jpg ::: *.JPG
+  parallel magick '{}' -resize x1080 smaller/'{.}'.jpg ::: $(find -iregex ".*\.\(jpe?g\|heic\)")
   # parallel magick '{}' -resize x1080 smaller/'{.}'.jpg ::: *.HEIC
   # rm -- *.HEIC
   mv smaller/*.jpg .
@@ -20,5 +20,9 @@ du -h "$dir"
 )
 du -h "$dir"
 #+end_src
+
+#+RESULTS:
+: 8.2M	20220526
+: 1.9M	20220526
 
 =20181225/*.jpg= 這樣做完之後從64M直接壓到剩4.5M。品質以1080p螢幕上來說是沒有問題的；4K我不確定，但我們真的沒有那個空間。
