@@ -66,6 +66,9 @@
 }
 
 @layer utilities {
+  .gray {
+    filter: grayscale(100%) brightness(0.5) contrast(2) brightness(2);
+  }
   .tr-all-200 {
     @apply transition-all duration-200 ease-in-out;
   }

@@ -17,6 +17,15 @@
       </a>
       {{ end }}
       <!-- prettier-ignore -->
+      {{ with .bahamut }}
+      <a href="https://home.gamer.com.tw/homeindex.php?owner={{.}}">
+        <img
+          class="rounded icon gray"
+          src="https://home.gamer.com.tw/favicon.ico"
+        />
+      </a>
+      {{ end }}
+      <!-- prettier-ignore -->
       {{ with .facebook }}
       <a href="https://www.facebook.com/profile.php?id={{.}}">
         {{ partial "simple-icon" "facebook" }}
