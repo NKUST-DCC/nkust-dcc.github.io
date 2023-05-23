@@ -23,6 +23,12 @@
       </a>
       {{ end }}
       <!-- prettier-ignore -->
+      {{ with .instagram }}
+      <a href="https://www.instagram.com/{{.}}">
+        {{ partial "simple-icon" "instagram" }}
+      </a>
+      {{ end }}
+      <!-- prettier-ignore -->
       {{ with .twitter }}
       <a href="https://twitter.com/{{.}}">
         {{ partial "simple-icon" "twitter" }}

@@ -38,7 +38,7 @@
     role: 資訊
     photo: /assets/avatar/雨秋.jpg
     twitter: Ameaki_1222
-future:
+112:
   - name: 負けカイジュウ（吳佳軒）
     role: 社長
     photo: /assets/avatar/kaijyuu.jpg
@@ -58,6 +58,11 @@ future:
     photo: /assets/avatar/カラ喀啦.jpg
   - name: 如月凜
     role: 美宣
+    photo: /assets/avatar/kisaragirin.jpg
+    facebook: 100087566401993
+    twitter: KisaragiRin0719
+    instagram: kisaragi_rinn
+    pixiv: 34271144
   - name: 西因娜
     role: 公關
   - name: 章魚燒
