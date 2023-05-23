@@ -26,7 +26,6 @@
     line: 31078494
   - name: Aphasia
     role: 副社長
-    photo: /assets/avatar/Aphasia.jpg
   - name: 桜野恵
     role: 美宣
     twitter: sakulanomegumi
@@ -56,6 +55,7 @@ future:
     facebook: 100005300767624
   - name: カラ喀啦
     role: 紀錄
+    photo: /assets/avatar/カラ喀啦.jpg
   - name: 如月凜
     role: 美宣
   - name: 西因娜

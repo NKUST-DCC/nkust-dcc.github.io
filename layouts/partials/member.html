@@ -1,6 +1,11 @@
 <div class="member lg:flex lg:flex-row lg:gap-8 lg:h-36 min-h-[2rem]">
   {{ with .photo }}
   <img class="m-0 w-36 h-36 object-cover mb-4 lg:mb-0" src="{{.}}" />
+  {{ else }}
+  <img
+    class="m-0 w-36 h-36 object-cover mb-4 lg:mb-0"
+    src="/assets/avatar/placeholder.png"
+  />
   {{ end }}
   <div>
     <div class="text-xl font-bold">{{.role}}</div>
