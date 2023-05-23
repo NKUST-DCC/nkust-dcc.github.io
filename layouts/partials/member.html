@@ -3,12 +3,18 @@
   <img class="m-0 w-36 h-36 object-cover mb-4 lg:mb-0" src="{{.}}" />
   {{ end }}
   <div>
-    <span class="text-xl font-bold">{{.role}}</span>
-    <span class="text-xl block whitespace-nowrap md:inline">{{.name}}</span>
+    <div class="text-xl font-bold">{{.role}}</div>
+    <div class="text-xl block whitespace-nowrap md:inline">{{.name}}</div>
     <div class="flex space-x-2">
       {{ with .pixiv }}
       <a href="https://www.pixiv.net/users/{{.}}">
         {{ partial "simple-icon" "pixiv" }}
+      </a>
+      {{ end }}
+      <!-- prettier-ignore -->
+      {{ with .facebook }}
+      <a href="https://www.facebook.com/profile.php?id={{.}}">
+        {{ partial "simple-icon" "facebook" }}
       </a>
       {{ end }}
       <!-- prettier-ignore -->

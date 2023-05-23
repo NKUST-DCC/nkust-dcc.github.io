@@ -39,6 +39,26 @@
     role: 資訊
     photo: /assets/avatar/雨秋.jpg
     twitter: Ameaki_1222
-# 112:
-#   - name: 壞獸
-#     role: 社長
+future:
+  - name: 負けカイジュウ（吳佳軒）
+    role: 社長
+    photo: /assets/avatar/kaijyuu.jpg
+    twitter: kaijyuu0419
+    pixiv: 42058858
+    facebook: 100019561183621
+  - name: Kohane
+    role: 副社長
+  - name: 莊逸林
+    role: 總務
+  - name: 墮天（吳振豪）
+    role: 資訊
+    photo: /assets/avatar/墮天.jpg
+    facebook: 100005300767624
+  - name: カラ喀啦
+    role: 紀錄
+  - name: 如月凜
+    role: 美宣
+  - name: 西因娜
+    role: 公關
+  - name: 章魚燒
+    role: 公關
