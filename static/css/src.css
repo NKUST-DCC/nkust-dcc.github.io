@@ -14,7 +14,7 @@
       @apply inline-block w-full;
       @apply text-b-dark;
       @apply font-bold;
-      @apply my-2 py-2 px-4;
+      @apply my-2 px-4 py-2;
       @apply rounded;
       @apply shadow;
       @apply tr-all-200;
@@ -26,15 +26,15 @@
     }
   }
   html {
-    @apply font-sans bg-white;
+    @apply bg-white font-sans;
   }
   dd {
     @apply ml-6;
   }
   h1 {
     @apply text-xl font-bold;
-    @apply mt-8 mb-8;
-    @apply underline decoration-a-500;
+    @apply mb-8 mt-8;
+    @apply decoration-a-500 underline;
     text-underline-offset: 0.5rem;
     text-decoration-thickness: 0.25rem;
   }
@@ -58,8 +58,8 @@
     }
   }
   article {
-    img {
-      @apply object-cover inline-block shadow mt-2 mb-6 mr-4;
+    img:not(a img) {
+      @apply mb-6 mr-4 mt-2 inline-block object-cover shadow;
       @apply md:w-[40%];
     }
   }
@@ -128,11 +128,11 @@
       @apply shadow;
     }
     .icon {
-      @apply inline shadow-none w-6 h-6;
+      @apply inline h-6 w-6 shadow-none;
     }
   }
   .btn {
-    @apply inline-block bg-b-dark text-white rounded-xl my-4 p-4 shadow;
+    @apply bg-b-dark my-4 inline-block rounded-xl p-4 text-white shadow;
     @apply tr-all-200;
     &:hover {
       text-decoration: none;
@@ -167,7 +167,7 @@
     }
   }
   ul.cards {
-    @apply p-0 my-8;
+    @apply my-8 p-0;
     @apply grid;
     @apply grid-cols-1 md:grid-cols-2;
     list-style: none;
