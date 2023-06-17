@@ -6,6 +6,6 @@
   <!-- prettier-ignore -->
   {{ with (site).Data.幹部 }}
     {{ range (index . $latest_year) }}
-  <li class="block w-[45%]">{{ partial "member" . }}</li>
+  <li class="block min-w-[45%]">{{ partial "member" . }}</li>
   {{ end }} {{ end }}
 </ul>
