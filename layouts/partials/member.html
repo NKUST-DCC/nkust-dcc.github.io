@@ -26,6 +26,12 @@
       </a>
       {{ end }}
       <!-- prettier-ignore -->
+      {{ with .facebook_page }}
+      <a href="https://www.facebook.com/{{.}}">
+        {{ partial "simple-icon" "facebook" }}
+      </a>
+      {{ end }}
+      <!-- prettier-ignore -->
       {{ with .facebook }}
       <a href="https://www.facebook.com/profile.php?id={{.}}">
         {{ partial "simple-icon" "facebook" }}
