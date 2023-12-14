@@ -12,10 +12,6 @@ cover: /assets/extra/92336058-normal.jpg
 
 要入社的話可以先來參加我們的期初茶會和迎新活動，加入新生的LINE群組，社課與社集的地點時間資訊會在那裡更新。
 
-<a id="新生群" href="https://line.me/R/ti/g/rud-lFof02">
-  <img src="/assets/line/line-112.png" alt="LINE QR Code" />
-</a>
-
 社課一般是在**K309**，社集一般是在**E301**，不過還是以LINE群裡的公告為主〜
 
 新生群組大約十一月左右就會關閉。
