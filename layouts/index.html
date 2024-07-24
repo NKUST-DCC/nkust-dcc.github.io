@@ -10,10 +10,10 @@
   </div>
   <h1 class="mt-8">最近活動</h1>
   <ul class="cards">
-    <!-- prettier-ignore -->
-    {{ range (first 4 (where .Site.RegularPages "Params.tags" "intersect" (slice "社團活動"))) }}
-  <li>{{ partial "card" . }}</li>
-  {{ end }}
+    {{ $relevant_pages := (where .Site.RegularPages "Params.tags" "intersect" (slice "社團活動")) }}
+    {{ range (first 4 $relevant_pages.ByDate.Reverse) }}
+      <li>{{ partial "card" . }}</li>
+    {{ end }}
   </ul>
   <div class="text-center">
     <a class="btn" href="/tags/社團活動">更多活動紀錄</a>
