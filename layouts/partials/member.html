@@ -1,9 +1,10 @@
-<div class="member lg:flex lg:flex-row lg:gap-8 lg:h-36 min-h-[2rem]">
+{{ $photoSize := "w-28 h-28" }}
+<div class="member lg:flex lg:flex-row lg:gap-8 min-h-[2rem]">
   {{ with .photo }}
-    <img class="m-0 w-36 h-36 object-cover mb-4 lg:mb-0" src="{{ . }}" />
+    <img class="m-0 {{ $photoSize }} object-cover mb-4 lg:mb-0" src="{{ . }}" />
   {{ else }}
     <img
-      class="m-0 w-36 h-36 object-cover mb-4 lg:mb-0"
+      class="m-0 {{ $photoSize }} object-cover mb-4 lg:mb-0"
       src="/assets/avatar/placeholder.png"
     />
   {{ end }}
