@@ -35,6 +35,6 @@ Params:
     這裡讓你兩個願望一次滿足!!
 
 frontmatter:
-  date: ["published", "created", "date"]
+  date: ["created", "date"]
   lastmod: ["updated"]
   expiryDate: ["expiryDate"]
