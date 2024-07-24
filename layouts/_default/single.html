@@ -1,12 +1,12 @@
 {{ define "main" }}
   <article>
+    {{ with .Param "extra_note" }}
+      <p><em>編註：{{ safe.HTML . }}</em></p>
+    {{ end }}
     <h1 class="mb-4">{{ .Title }}</h1>
     {{ .Content }}
   </article>
   <div class="mt-6">
-    {{ with .Param "extra_note" }}
-      <p><em>編註：{{ safe.HTML . }}</em></p>
-    {{ end }}
     {{ with .GetTerms "tags" }}
       <div class="flex space-x-2">
         {{ range . }}
