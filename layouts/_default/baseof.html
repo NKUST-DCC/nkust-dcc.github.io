@@ -42,20 +42,24 @@
   </head>
   <body class="flex flex-col min-h-screen m-auto text-base">
     <!-- Header -->
-    <header class="h-[32rem] md:h-[26rem] font-bold md:mb-8 header main-width">
+    <header
+      class="{{ if .Params.cover }}
+        h-[26rem] md:h-[26rem]
+      {{ end }} font-bold md:mb-4 header main-width"
+    >
       {{ with .Params.cover }}
         <div class="absolute w-full inset-0 z-[-1]">
           <img
-            class="h-[32rem] md:h-[26rem] w-full object-cover"
+            class="h-[26rem] md:h-[26rem] w-full object-cover"
             src="{{ . }}"
           />
         </div>
-        <!-- 漸層；top要是上面header和img的高度減掉8rem(也就是下面的h-32) -->
+        <!-- 漸層；top要是上面header和img的高度減掉漸層的高度(12rem) -->
         <div
-          class="absolute w-full right-0 bottom-0 left-0 top-[24rem] md:top-[18rem] z-[-1]"
+          class="absolute w-full right-0 bottom-0 left-0 top-[14rem] md:top-[14rem] z-[-1]"
         >
           <div
-            class="bg-gradient-to-b from-transparent to-white h-32 w-full object-cover"
+            class="bg-gradient-to-b from-transparent via-[#ffffff55] to-white h-[12rem] w-full object-cover"
           ></div>
         </div>
       {{ end }}
@@ -69,7 +73,7 @@
           mt-4 mb-0
           pl-2
           -ml-2
-          md:items-center md:mt-16 md:mb-12
+          md:items-center md:mt-16 md:mb-8
         "
       >
         <img
@@ -120,7 +124,7 @@
         </ul>
       </nav>
     </header>
-    <main class="grow flex-col md:flex-row main-width my-8">
+    <main class="grow flex-col md:flex-row main-width mb-8">
       <!-- Contents -->
       {{ block "main" . }}{{ end }}
     </main>
