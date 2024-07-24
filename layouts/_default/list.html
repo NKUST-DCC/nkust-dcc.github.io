@@ -1,17 +1,17 @@
 {{ define "main" }}
-<section>
-  <h1>#{{ .Title }}</h1>
-  {{.Content}}
-  <!-- prettier-ignore -->
-  <!-- 用 desc 這樣會最近的學期會在最上面 -->
-  {{ range (.Pages.GroupByParam "semester" "desc") }}
-  <h2>{{partial "func-human-semester" .Key}}</h2>
-  <ul class="cards">
-    <!-- Group裡面的頁面已經是最新的在最上面了 -->
-    {{ range .Pages }}
-    <li>{{ partial "card" . }}</li>
+  <section>
+    <h1>#{{ .Title }}</h1>
+    {{ .Content }}
+    <!-- prettier-ignore -->
+    <!-- 用 desc 這樣會最近的學期會在最上面 -->
+    {{ range (.Pages.GroupByParam "semester" "desc") }}
+      <h2>{{ partial "func-human-semester" .Key }}</h2>
+      <ul class="cards">
+        <!-- Group裡面的頁面已經是最新的在最上面了 -->
+        {{ range .Pages }}
+          <li>{{ partial "card" . }}</li>
+        {{ end }}
+      </ul>
     {{ end }}
-  </ul>
-  {{ end }}
-</section>
+  </section>
 {{ end }}

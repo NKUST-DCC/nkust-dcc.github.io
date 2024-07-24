@@ -12,20 +12,20 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     {{ if (eq .Kind "home") }}
-    <title>高科大夢想漫研</title>
+      <title>高科大夢想漫研</title>
     {{ else }}
-    <title>{{.Title}} | 高科大夢想漫研</title>
+      <title>{{ .Title }} | 高科大夢想漫研</title>
     {{ end }}
-    <meta property="og:title" content="{{.Title}}" />
+    <meta property="og:title" content="{{ .Title }}" />
 
     {{ with .Site.Params.description }}
-    <meta name="description" content="{{.}}" />
-    <meta name="twitter:description" content="{{.}}" />
-    <meta property="og:description" content="{{.}}" />
+      <meta name="description" content="{{ . }}" />
+      <meta name="twitter:description" content="{{ . }}" />
+      <meta property="og:description" content="{{ . }}" />
     {{ end }}
-    <meta property="og:sitename" content="{{.Site.Params.sitename}}" />
+    <meta property="og:sitename" content="{{ .Site.Params.sitename }}" />
     <link rel="icon" href="/favicon.ico" />
-    <meta property="og:url" content="{{.Permalink | absURL }}" />
+    <meta property="og:url" content="{{ .Permalink | absURL }}" />
     <link rel="canonical" href="{{ .Permalink | absURL }}" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -44,38 +44,25 @@
     <!-- Header -->
     <header class="h-[32rem] md:h-[26rem] font-bold md:mb-8 header main-width">
       {{ with .Params.cover }}
-      <div class="absolute w-full inset-0 z-[-1]">
-        <img class="h-[32rem] md:h-[26rem] w-full object-cover" src="{{.}}" />
-      </div>
-      <!-- 漸層；top要是上面header和img的高度減掉8rem(也就是下面的h-32) -->
-      <div
-        class="
-          absolute
-          w-full
-          right-0
-          bottom-0
-          left-0
-          top-[24rem]
-          md:top-[18rem]
-          z-[-1]
-        "
-      >
+        <div class="absolute w-full inset-0 z-[-1]">
+          <img
+            class="h-[32rem] md:h-[26rem] w-full object-cover"
+            src="{{ . }}"
+          />
+        </div>
+        <!-- 漸層；top要是上面header和img的高度減掉8rem(也就是下面的h-32) -->
         <div
-          class="
-            bg-gradient-to-b
-            from-transparent
-            to-white
-            h-32
-            w-full
-            object-cover
-          "
-        ></div>
-      </div>
+          class="absolute w-full right-0 bottom-0 left-0 top-[24rem] md:top-[18rem] z-[-1]"
+        >
+          <div
+            class="bg-gradient-to-b from-transparent to-white h-32 w-full object-cover"
+          ></div>
+        </div>
       {{ end }}
       <div
         id="logo"
         class="
-          {{ if .Params.cover }} legible-on-image {{ end }}
+          {{ if .Params.cover }}legible-on-image{{ end }}
           flex
           gap-x-4
           justify-start
@@ -97,17 +84,12 @@
       </div>
       <nav
         class="
-          {{ if .Params.cover }} legible-on-image {{ end }}
+          {{ if .Params.cover }}legible-on-image{{ end }}
           md:pl-2
           md:-ml-2"
       >
         <ul
-          class="
-            text-lg
-            list-none
-            rounded
-            md:w-full md:max-w-3xl md:flex md:justify-between
-          "
+          class="text-lg list-none rounded md:w-full md:max-w-3xl md:flex md:justify-between"
         >
           <li class="md:inline-block">
             {{ partial "cura" (dict "ctx" . "href" "/" "text" "首頁") }}
@@ -140,7 +122,7 @@
     </header>
     <main class="grow flex-col md:flex-row main-width my-8">
       <!-- Contents -->
-      {{ block "main" . }} {{ end }}
+      {{ block "main" . }}{{ end }}
     </main>
     <!-- Footer -->
     <footer class="bg-b-dark text-white py-8 footer">

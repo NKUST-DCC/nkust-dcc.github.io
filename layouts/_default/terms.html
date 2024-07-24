@@ -1,11 +1,11 @@
 {{ define "main" }}
-<section>
-  <h1>{{ .Title }}</h1>
-  {{.Content}}
-  <ul class="cards">
-    {{ range .Pages }}
-    <li>{{ partial "card" . }}</li>
-    {{ end }}
-  </ul>
-</section>
+  <section>
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+    <ul class="cards">
+      {{ range .Pages }}
+        <li>{{ partial "card" . }}</li>
+      {{ end }}
+    </ul>
+  </section>
 {{ end }}

@@ -1,33 +1,35 @@
 {{ define "main" }}
-
-<!-- prettier-ignore -->
-{{ $calendars := (where .Site.RegularPages "Section" "calendar") }}
+  <!-- prettier-ignore -->
+  {{ $calendars := (where .Site.RegularPages "Section" "calendar") }}
 {{ $calendars = (sort $calendars "Title" "desc") }}
+  
 
 {{ $latest := (index $calendars 0).File.BaseFileName }}
+  
 
 {{ $this := "" }}
 {{ if .IsSection }}
-{{ $this = $latest }}
-{{ else }}
-{{ $this = .File.BaseFileName }}
-{{ end }}
+    {{ $this = $latest }}
+  {{ else }}
+    {{ $this = .File.BaseFileName }}
+  {{ end }}
 
-<div class="md:two-columns">
-  <article>
-    <!-- prettier-ignore -->
-    <img class="shadow rounded-lg constrain-width"
-           src="{{printf "/assets/calendar/%s.png" $this}}">
-  </article>
-  <aside>
-    <ul>
+
+  <div class="md:two-columns">
+    <article>
       <!-- prettier-ignore -->
-      {{ range (sort (where .Site.RegularPages "Section" "calendar") "Title" "desc")}}
+      <img class="shadow rounded-lg constrain-width"
+           src="{{ printf "/assets/calendar/%s.png" $this }}">
+    </article>
+    <aside>
+      <ul>
+        <!-- prettier-ignore -->
+        {{ range (sort (where .Site.RegularPages "Section" "calendar") "Title" "desc")}}
       <li>
         {{ partial "cura" (dict "ctx" $ "href" .Permalink "text" .Title) }}
       </li>
       {{ end }}
-    </ul>
-  </aside>
-</div>
+      </ul>
+    </aside>
+  </div>
 {{ end }}

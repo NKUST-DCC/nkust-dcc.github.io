@@ -1,5 +1,5 @@
-{{if (eq (absURL .ctx.Permalink) (absURL .href))}}
-<a class="current" href="{{.href}}">{{.text}}</a>
-{{else}}
-<a href="{{.href}}">{{.text}}</a>
-{{end}}
+{{ if (eq (absURL .ctx.Permalink) (absURL .href)) }}
+  <a class="current" href="{{ .href }}">{{ .text }}</a>
+{{ else }}
+  <a href="{{ .href }}">{{ .text }}</a>
+{{ end }}

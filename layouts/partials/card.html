@@ -1,22 +1,10 @@
 <a
-  class="
-    shadow
-    bg-a
-    text-a-900
-    flex flex-col
-    rounded-lg
-    h-60
-    transition-all
-    duration-200
-    ease
-    card
-    hover:no-underline hover:shadow-md
-  "
-  href="{{.Permalink}}"
+  class="shadow bg-a text-a-900 flex flex-col rounded-lg h-60 transition-all duration-200 ease card hover:no-underline hover:shadow-md"
+  href="{{ .Permalink }}"
 >
   <img
     class="w-full h-4/5 object-cover rounded-t-lg"
-    src='{{ or .Params.cover "/assets/20210505/_MG_4277.JPG" }}'
+    src="{{ or .Params.cover "/assets/20210505/_MG_4277.JPG" }}"
   />
-  <span class="mx-4 my-2">{{.Title}}</span>
+  <span class="mx-4 my-2">{{ .Title }}</span>
 </a>

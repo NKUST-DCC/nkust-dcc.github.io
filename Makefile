@@ -3,11 +3,14 @@
 export LANG=en_US.UTF-8
 
 # 告訴 Make "clean" 等等不是檔案，只是一個指令。
-.PHONY: clean dev-css dev-hugo dev js
+.PHONY: calendar clean content-content content-css dev dev dev fmt/hugo js/組織章程
 
 # 方便用。用 make clean 把所有 git 忽略掉的檔案清掉。
 clean:
 	git clean -Xdf
+
+fmt:
+	npx prettier -w **/*.css **/*.html
 
 # 開發用。tailwind 的 --watch 模式代表它會監視 src.css 有沒有改變，如
 # 果有的話就產生一個新的版本。不然平常產生一次之後就結束了。
@@ -48,11 +51,9 @@ static/css/built.css: static/css/src.css
 content: content/組織章程 content/calendar
 
 # 自動為assets下每個行事曆的檔案產生一個頁面
-.PHONY: content/calendar
 content/calendar: static/assets/calendar
 	for f in static/assets/calendar/*.pdf; do printf -- "---\ntitle: %s 社團行事曆\n---" $$(basename "$$f" .pdf) > content/calendar/$$(basename $$f .pdf).md; done
 
-.PHONY: content/組織章程
 content/組織章程: static/assets/組織章程
 	for f in static/assets/組織章程/*.pdf; do printf -- "---\ntitle: %s 組織章程\n---" $$(basename "$$f" .pdf) > content/組織章程/$$(basename $$f .pdf).md; done
 

@@ -1,23 +1,23 @@
-{{define "main"}}
-<div class="gap-x-8 md:flex">
-  <div class="md:w-1/2">
-    {{.Content}}
-    <a class="btn" href="/join">加入社團</a>
+{{ define "main" }}
+  <div class="gap-x-8 md:flex">
+    <div class="md:w-1/2">
+      {{ .Content }}
+      <a class="btn" href="/join">加入社團</a>
+    </div>
   </div>
-</div>
-<h1 class="mt-8">最近活動</h1>
-<ul class="cards">
-  <!-- prettier-ignore -->
-  {{ range (first 4 (where .Site.RegularPages "Params.tags" "intersect" (slice "社團活動"))) }}
+  <h1 class="mt-8">最近活動</h1>
+  <ul class="cards">
+    <!-- prettier-ignore -->
+    {{ range (first 4 (where .Site.RegularPages "Params.tags" "intersect" (slice "社團活動"))) }}
   <li>{{ partial "card" . }}</li>
   {{ end }}
-</ul>
-<div class="text-center">
-  <a class="btn" href="/tags/社團活動">更多活動紀錄</a>
-</div>
-<h1 class="mt-8">認識我們</h1>
-{{ partial "幹部" . }}
-<div class="text-center">
-  <a class="btn" href="/about">關於我們</a>
-</div>
-{{end}}
+  </ul>
+  <div class="text-center">
+    <a class="btn" href="/tags/社團活動">更多活動紀錄</a>
+  </div>
+  <h1 class="mt-8">認識我們</h1>
+  {{ partial "幹部" . }}
+  <div class="text-center">
+    <a class="btn" href="/about">關於我們</a>
+  </div>
+{{ end }}

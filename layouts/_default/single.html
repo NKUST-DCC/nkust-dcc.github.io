@@ -1,32 +1,33 @@
 {{ define "main" }}
-<article>
-  <h1>{{ .Title }}</h1>
-  <!-- prettier-ignore -->
-  <ul>
-  {{ range .GetTerms "tags" }}
-    <li><a href="{{.Permalink}}">#{{.Title}}</a></li>
-  {{ end }}
-  </ul>
-  {{.Content}}
-</article>
-{{ if (eq .Section "posts") }}
-<div class="mt-4 mb-0">
-  <hr class="mx-0 my-12" />
-  <div class="flex flex-col md:flex-row gap-8">
+  <article>
+    <h1>{{ .Title }}</h1>
     <!-- prettier-ignore -->
-    {{with .PrevInSection}}
+    <ul>
+  {{ range .GetTerms "tags" }}
+      <li><a href="{{ .Permalink }}">#{{ .Title }}</a></li>
+    {{ end }}
+  </ul>
+    {{ .Content }}
+  </article>
+  {{ if (eq .Section "posts") }}
+    <div class="mt-4 mb-0">
+      <hr class="mx-0 my-12" />
+      <div class="flex flex-col md:flex-row gap-8">
+        <!-- prettier-ignore -->
+        {{with .PrevInSection}}
     <!-- prettier-ignore -->
     <div class="md:w-1/2">
       {{ partial "card" . }}
     </div>
     {{end}}
-    <!-- prettier-ignore -->
-    {{with .NextInSection}}
+        <!-- prettier-ignore -->
+        {{with .NextInSection}}
     <!-- prettier-ignore -->
     <div class="md:w-1/2 md:text-right">
       {{ partial "card" . }}
     </div>
     {{end}}
-  </div>
-</div>
-{{ end }} {{ end }}
+      </div>
+    </div>
+  {{ end }}
+{{ end }}

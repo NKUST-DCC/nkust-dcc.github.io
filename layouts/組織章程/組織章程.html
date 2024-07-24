@@ -1,32 +1,36 @@
 {{ define "main" }}
-
-<!-- prettier-ignore -->
-{{ $歷年組織章程 := (where .Site.RegularPages "Section" "組織章程") }}
+  <!-- prettier-ignore -->
+  {{ $歷年組織章程 := (where .Site.RegularPages "Section" "組織章程") }}
 {{ $歷年組織章程 = (sort $歷年組織章程 "Title" "desc") }}
+  
 
 {{ $latest := (index $歷年組織章程 0).File.BaseFileName }}
+  
 
 {{ $this := "" }}
 {{ if .IsSection }}
-{{ $this = $latest }}
-{{ else }}
-{{ $this = .File.BaseFileName }}
-{{ end }}
+    {{ $this = $latest }}
+  {{ else }}
+    {{ $this = .File.BaseFileName }}
+  {{ end }}
 
-<h1>
-    <a href="{{ printf "/assets/組織章程/%s.pdf" $this }}">{{$this}}.pdf</a>
-</h1>
-<div class="md:two-columns">
-  <article>{{partial "pdf" (printf "/assets/組織章程/%s.pdf" $this)}}</article>
-  <aside>
-    <ul>
-      <!-- prettier-ignore -->
-      {{ range (sort (where .Site.RegularPages "Section" "組織章程") "Title" "desc")}}
+
+  <h1>
+    <a href="{{ printf "/assets/組織章程/%s.pdf" $this }}">{{ $this }}.pdf</a>
+  </h1>
+  <div class="md:two-columns">
+    <article>
+      {{ partial "pdf" (printf "/assets/組織章程/%s.pdf" $this) }}
+    </article>
+    <aside>
+      <ul>
+        <!-- prettier-ignore -->
+        {{ range (sort (where .Site.RegularPages "Section" "組織章程") "Title" "desc")}}
       <li>
         {{ partial "cura" (dict "ctx" $ "href" .Permalink "text" .Title) }}
       </li>
       {{ end }}
-    </ul>
-  </aside>
-</div>
+      </ul>
+    </aside>
+  </div>
 {{ end }}
