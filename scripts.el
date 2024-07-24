@@ -20,38 +20,23 @@ SEMESTER is which semester DATE belongs to."
                        "\n")))
     (with-temp-file (format "content/posts/%s.md" date)
       (pcase type
-        ("社集"
+        ((or "社集" "社課" "期初茶會")
          (insert (format "---
-title: %s.%s.%s 社集
+title: %s.%s.%s %s
 date: %s-%s-%s
-tags: [社團活動, 社集]
+tags: [社團活動, %s]
 author: 如月
 semester: %s
 cover: %s
 ---
 
 %s"
-                         roc-year month day
+                         roc-year month day type
                          year month day
-                         semester
-                         cover
-                         photos-text)))
-        ("社課"
-         (insert (format "---
-title: %s.%s.%s 社課
-date: %s-%s-%s
-tags: [社團活動, 社課]
-author: 如月
-semester: %s
-cover: %s
----
-
-%s"
-                         roc-year month day
-                         year month day
+                         type
                          semester
                          cover
                          photos-text)))))))
 
-(--each '("20221201")
-  (k/create-post "社集" it "111-1"))
+(--each '("20210929")
+  (k/create-post "期初茶會" it "110-1"))
