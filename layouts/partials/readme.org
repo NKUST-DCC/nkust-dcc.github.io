@@ -12,6 +12,10 @@
 
   =(dict …)= 是給 /cura/ 這個partial的輸入值，以 ~<鍵> <值> <鍵> <值> …~ 的方式寫。
 
+  - ctx :: 目前頁面物件
+  - href :: 該選項會開啟的連結
+  - text :: 顯示連結用的文字
+
 - pdf ::
 
   #+begin_src go-text-template
