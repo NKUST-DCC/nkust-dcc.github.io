@@ -24,7 +24,7 @@
       <meta property="og:description" content="{{ . }}" />
     {{ end }}
     <meta property="og:sitename" content="{{ .Site.Params.sitename }}" />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.ico?v=1" />
     <meta property="og:url" content="{{ .Permalink | absURL }}" />
     <link rel="canonical" href="{{ .Permalink | absURL }}" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -78,7 +78,7 @@
       >
         <img
           class="hidden md:block max-h-16 text-2xl"
-          src="/icon.png"
+          src="/icon.png?v=1"
           alt="Icon"
         />
         <h1 class="my-0 text-2xl md:text-5xl">
