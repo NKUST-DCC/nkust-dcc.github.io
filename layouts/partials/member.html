@@ -17,44 +17,38 @@
           {{ partial "simple-icon" "pixiv" }}
         </a>
       {{ end }}
-      <!-- prettier-ignore -->
       {{ with .bahamut }}
-      <a href="https://home.gamer.com.tw/homeindex.php?owner={{.}}">
-        <img
-          class="rounded icon gray"
-          src="https://home.gamer.com.tw/favicon.ico"
-        />
-      </a>
+        <a href="https://home.gamer.com.tw/homeindex.php?owner={{ . }}">
+          <img
+            class="rounded icon gray"
+            src="https://home.gamer.com.tw/favicon.ico"
+          />
+        </a>
       {{ end }}
-      <!-- prettier-ignore -->
       {{ with .facebook_page }}
-      <a href="https://www.facebook.com/{{.}}">
-        {{ partial "simple-icon" "facebook" }}
-      </a>
+        <a href="https://www.facebook.com/{{ . }}">
+          {{ partial "simple-icon" "facebook" }}
+        </a>
       {{ end }}
-      <!-- prettier-ignore -->
       {{ with .facebook }}
-      <a href="https://www.facebook.com/profile.php?id={{.}}">
-        {{ partial "simple-icon" "facebook" }}
-      </a>
+        <a href="https://www.facebook.com/profile.php?id={{ . }}">
+          {{ partial "simple-icon" "facebook" }}
+        </a>
       {{ end }}
-      <!-- prettier-ignore -->
       {{ with .instagram }}
-      <a href="https://www.instagram.com/{{.}}">
-        {{ partial "simple-icon" "instagram" }}
-      </a>
+        <a href="https://www.instagram.com/{{ . }}">
+          {{ partial "simple-icon" "instagram" }}
+        </a>
       {{ end }}
-      <!-- prettier-ignore -->
       {{ with .twitter }}
-      <a href="https://twitter.com/{{.}}">
-        {{ partial "simple-icon" "twitter" }}
-      </a>
+        <a href="https://twitter.com/{{ . }}">
+          {{ partial "simple-icon" "twitter" }}
+        </a>
       {{ end }}
-      <!-- prettier-ignore -->
       {{ with .line }}
-      <a href="https://line.me/ti/p/~{{.}}">
-        {{ partial "simple-icon" "line" }}
-      </a>
+        <a href="https://line.me/ti/p/~{{ . }}">
+          {{ partial "simple-icon" "line" }}
+        </a>
       {{ end }}
     </div>
   </div>
