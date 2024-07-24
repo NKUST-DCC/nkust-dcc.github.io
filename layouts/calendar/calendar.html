@@ -1,14 +1,11 @@
 {{ define "main" }}
-  <!-- prettier-ignore -->
   {{ $calendars := (where .Site.RegularPages "Section" "calendar") }}
-{{ $calendars = (sort $calendars "Title" "desc") }}
-  
+  {{ $calendars = (sort $calendars "Title" "desc") }}
 
-{{ $latest := (index $calendars 0).File.BaseFileName }}
-  
+  {{ $latest := (index $calendars 0).File.BaseFileName }}
 
-{{ $this := "" }}
-{{ if .IsSection }}
+  {{ $this := "" }}
+  {{ if .IsSection }}
     {{ $this = $latest }}
   {{ else }}
     {{ $this = .File.BaseFileName }}
@@ -23,12 +20,11 @@
     </article>
     <aside>
       <ul>
-        <!-- prettier-ignore -->
-        {{ range (sort (where .Site.RegularPages "Section" "calendar") "Title" "desc")}}
-      <li>
-        {{ partial "cura" (dict "ctx" $ "href" .Permalink "text" .Title) }}
-      </li>
-      {{ end }}
+        {{ range (sort (where .Site.RegularPages "Section" "calendar") "Title" "desc") }}
+          <li>
+            {{ partial "cura" (dict "ctx" $ "href" .Permalink "text" .Title) }}
+          </li>
+        {{ end }}
       </ul>
     </aside>
   </div>
