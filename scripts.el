@@ -38,5 +38,5 @@ cover: %s
                          cover
                          photos-text)))))))
 
-(--each '("20191113")
-  (k/create-post "文庫展" it "108-1"))
+(--each '("20200907")
+  (k/create-post "社團嘉年華" it "109-1"))
