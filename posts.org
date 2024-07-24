@@ -1,46 +1,4 @@
-* Scripts
-
-#+begin_src emacs-lisp
-(defun k/create-post (date semester)
-  "Create a new post for DATE.
-DATE should be YYYYMMDD.
-SEMESTER is which semester DATE belongs to."
-  (let* ((year (string-to-number (substring date 0 4)))
-         (roc-year (- year 1911))
-         (month (substring date 4 6))
-         (day (substring date 6 8))
-         (photos
-          (->> (f-files (f-join "static/assets/" date))
-               (--map (f-relative it "static/")))))
-    (with-temp-file (format "content/posts/%s.md" date)
-      (insert (format "---
-title: %s.%s.%s 社課
-date: %s-%s-%s
-tags: [社團活動, 社課]
-author: 如月
-semester: %s
-cover: %s
----
-
-%s
-"
-                      roc-year month day
-                      year month day
-                      semester
-                      (format "/%s" (car photos))
-                      (string-join
-                       (--map
-                        (format "{{< photo \"/%s\" >}}" it)
-                        photos)
-                       "\n"))))))
-#+end_src
-
-#+begin_src emacs-lisp
-(--each '("20230926" "20231003" "20231024" "20231114" "20231121" "20231128" "20231205" "20231212")
-  (k/create-post it "112-1"))
-#+end_src
-
-* [21/173] 沒有現存文章而需要補充的活動頁面
+* [31%] [58/182] 沒有現存文章而需要補充的活動頁面
 :PROPERTIES:
 :COOKIE_DATA: recursive
 :END:
@@ -162,43 +120,43 @@ cover: %s
 *** TODO 111-05-03 社課
 *** TODO 111-05-10 社課
 *** TODO 111-05-26 期末聚餐
-** TODO 111學年
-*** TODO 1110927社課
-*** TODO 1110929社集
-*** TODO 1111003社團嘉年華
-*** TODO 1111004社課
-*** TODO 1111006新生茶會
-*** TODO 1111011社課
-*** TODO 1111012聚餐
-*** TODO 1111013社集
-*** TODO 1111018文庫展
-*** TODO 1111020社集
-*** TODO 1111025社課
-*** TODO 1111027社集
-*** TODO 1111117社集
-*** TODO 1111122社課
-*** TODO 1111124歌謠祭
-*** TODO 1111129社課
-*** TODO 1111201社集
-*** TODO 1111206社課
-*** TODO 1111208社集
-*** TODO 1111213社課
-*** TODO 1111215期末聚餐
-*** TODO 1111220期末社員大會
-*** TODO 1120302期初社員大會&聚餐
-*** TODO 1120307社課
-*** TODO 1120309社集
-*** TODO 1120314社課
-*** TODO 1120316社集
-*** TODO 1120321社課
-*** TODO 1120323社集
-*** TODO 1120328文庫展
-*** TODO 1120330社集
-*** TODO 1120425社課
-*** TODO 1120427歌謠祭
-*** TODO 1120502社課
-*** TODO 1120504社集
-*** TODO 1120509社課
+** DONE 111學年
+*** DONE 1110927社課
+*** DONE 1110929社集
+*** DONE 1111003社團嘉年華
+*** DONE 1111004社課
+*** DONE 1111006新生茶會
+*** DONE 1111011社課
+*** DONE 1111012聚餐
+*** DONE 1111013社集
+*** DONE 1111018文庫展
+*** DONE 1111020社集
+*** DONE 1111025社課
+*** DONE 1111027社集
+*** DONE 1111117社集
+*** DONE 1111122社課
+*** DONE 1111124歌謠祭
+*** DONE 1111129社課
+*** DONE 1111201社集
+*** DONE 1111206社課
+*** DONE 1111208社集
+*** DONE 1111213社課
+*** DONE 1111215期末聚餐
+*** DONE 1111220期末社員大會
+*** DONE 1120302期初社員大會&聚餐
+*** DONE 1120307社課
+*** DONE 1120309社集
+*** DONE 1120314社課
+*** DONE 1120316社集
+*** DONE 1120321社課
+*** DONE 1120323社集
+*** DONE 1120328文庫展
+*** DONE 1120330社集
+*** DONE 1120425社課
+*** DONE 1120427歌謠祭
+*** DONE 1120502社課
+*** DONE 1120504社集
+*** DONE 1120509社課
 ** DONE 112學年度1
 *** DONE 1120926社課
 *** DONE 1121003社課
@@ -217,3 +175,12 @@ cover: %s
 *** DONE 1130514社課
 *** DONE 1130521社課
 *** DONE 1130528社課
+** TODO Other events
+*** TODO 112-1 期初
+*** TODO 112-1 期末
+*** TODO 112-1 歌謠
+*** TODO 112-1 文庫
+*** TODO 112-2 期初
+*** TODO 112-2 期末
+*** TODO 112-2 歌謠
+*** TODO 112-2 文庫
