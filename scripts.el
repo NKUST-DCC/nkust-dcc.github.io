@@ -17,11 +17,14 @@ SEMESTER is which semester DATE belongs to."
                        (--map
                         (format "{{< photo \"/%s\" >}}" it)
                         photos)
-                       "\n")))
+                       "\n"))
+         (written-type type))
     (with-temp-file (format "content/posts/%s.md" date)
-      (pcase type
-        ((or "社集" "社課" "期初茶會" "社團嘉年華" "文庫展")
-         (insert (format "---
+      (when (equal type "期初聚餐")
+        (setq written-type "聚餐, 期初聚餐"))
+      (when (equal type "期末聚餐")
+        (setq written-type "聚餐, 期末聚餐"))
+      (insert (format "---
 title: %s.%s.%s %s
 date: %s-%s-%s
 tags: [社團活動, %s]
@@ -31,12 +34,12 @@ cover: %s
 ---
 
 %s"
-                         year month day type
-                         year month day
-                         type
-                         semester
-                         cover
-                         photos-text)))))))
+                      year month day type
+                      year month day
+                      written-type
+                      semester
+                      cover
+                      photos-text)))))
 
-(--each '("20200907")
-  (k/create-post "社團嘉年華" it "109-1"))
+(--each '("20200319")
+  (k/create-post "期初聚餐" it "108-2"))
