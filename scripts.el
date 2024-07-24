@@ -20,7 +20,7 @@ SEMESTER is which semester DATE belongs to."
                        "\n")))
     (with-temp-file (format "content/posts/%s.md" date)
       (pcase type
-        ((or "社集" "社課" "期初茶會")
+        ((or "社集" "社課" "期初茶會" "社團嘉年華" "文庫展")
          (insert (format "---
 title: %s.%s.%s %s
 date: %s-%s-%s
@@ -31,12 +31,12 @@ cover: %s
 ---
 
 %s"
-                         roc-year month day type
+                         year month day type
                          year month day
                          type
                          semester
                          cover
                          photos-text)))))))
 
-(--each '("20200331" "20200414" "20200505" "20200512" "20200519" "20200526")
-  (k/create-post "社集" it "108-2"))
+(--each '("20191113")
+  (k/create-post "文庫展" it "108-1"))
