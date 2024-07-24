@@ -1,6 +1,6 @@
 ---
 title: 高科大夢想漫研
-cover: /assets/20210505/_MG_4355.JPG
+cover: /assets/20240528/310519.jpg
 ---
 
 歡迎來到夢想漫研社！
