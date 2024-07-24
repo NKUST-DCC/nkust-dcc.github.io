@@ -60,7 +60,7 @@
   article {
     img:not(a img) {
       @apply mb-6 mr-4 mt-2 inline-block object-cover shadow;
-      @apply md:max-h-[16rem];
+      /* @apply md:max-h-[16rem]; */
     }
   }
 }
