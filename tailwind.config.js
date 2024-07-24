@@ -15,8 +15,8 @@ module.exports = {
     },
     extend: {
       fontSize: {
-        xs: ["12px", { lineHeight: "1rem" }],
-        sm: ["14px", { lineHeight: "1.25rem" }],
+        xs: ["14px", { lineHeight: "1rem" }],
+        sm: ["16px", { lineHeight: "1.4" }],
         base: ["18px", { lineHeight: "1.6" }],
         lg: ["20px", { lineHeight: "1.4" }],
         xl: ["24px", { lineHeight: "1.4" }],

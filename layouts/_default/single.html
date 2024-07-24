@@ -1,32 +1,45 @@
 {{ define "main" }}
   <article>
-    <h1>{{ .Title }}</h1>
-    <!-- prettier-ignore -->
-    <ul>
-  {{ range .GetTerms "tags" }}
-      <li><a href="{{ .Permalink }}">#{{ .Title }}</a></li>
-    {{ end }}
-  </ul>
+    <h1 class="mb-4">{{ .Title }}</h1>
     {{ .Content }}
   </article>
+  <div class="mt-6">
+    {{ with .Param "extra_note" }}
+      <p><em>編註：{{ safe.HTML . }}</em></p>
+    {{ end }}
+    {{ with .GetTerms "tags" }}
+      <div class="flex space-x-2">
+        {{ range . }}
+          <a class="text-sm block" href="{{ .Permalink }}">#{{ .Title }}</a>
+        {{ end }}
+      </div>
+    {{ end }}
+    {{ with (.Param "published") }}
+      <div class="text-sm">公開日期:{{ partial "date" . }}</div>
+    {{ end }}
+    {{ with (.Param "author") }}
+      <div class="text-sm">作者: {{ . }}</div>
+    {{ end }}
+    {{ with (.Param "extra_props") }}
+      {{ range $k, $v := . }}
+        <div class="text-sm">{{ $k }}: {{ $v }}</div>
+      {{ end }}
+    {{ end }}
+  </div>
   {{ if (eq .Section "posts") }}
-    <div class="mt-4 mb-0">
-      <hr class="mx-0 my-12" />
+    <div class="my-0">
+      <hr class="mx-0 mb-12 my-6" />
       <div class="flex flex-col md:flex-row gap-8">
-        <!-- prettier-ignore -->
-        {{with .PrevInSection}}
-    <!-- prettier-ignore -->
-    <div class="md:w-1/2">
-      {{ partial "card" . }}
-    </div>
-    {{end}}
-        <!-- prettier-ignore -->
-        {{with .NextInSection}}
-    <!-- prettier-ignore -->
-    <div class="md:w-1/2 md:text-right">
-      {{ partial "card" . }}
-    </div>
-    {{end}}
+        {{ with .PrevInSection }}
+          <div class="md:w-1/2">
+            {{ partial "card" . }}
+          </div>
+        {{ end }}
+        {{ with .NextInSection }}
+          <div class="md:w-1/2 md:text-right">
+            {{ partial "card" . }}
+          </div>
+        {{ end }}
       </div>
     </div>
   {{ end }}

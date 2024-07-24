@@ -33,7 +33,7 @@
   }
   h1 {
     @apply text-xl font-bold;
-    @apply mb-8 mt-8;
+    @apply my-8;
     @apply decoration-a-500 underline;
     text-underline-offset: 0.5rem;
     text-decoration-thickness: 0.25rem;
