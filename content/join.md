@@ -25,7 +25,7 @@ cover: /assets/extra/92336058-normal.jpg
 社員所享有的權益：
 
 - 加入社員的LINE群組
-- 在我們的Discord有正式社員的權限
+- 在我們的[Discord](https://discord.gg/Jfwmjeu8qa)有正式社員的權限
 - 社服
 - 可以進入社辦使用社產資源
 
