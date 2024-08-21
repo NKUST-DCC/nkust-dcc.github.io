@@ -165,29 +165,29 @@
         background: "#00000050",
         margin: 20,
       });
-      {
-        const QRLink = document.getElementById("新生群");
-        if (typeof QRLink !== "undefined") {
-          QRLink.addEventListener("click", (e) => {
-            e.preventDefault();
-            fetch(QRLink.href, { method: "head", redirect: "manual" }).then(
-              (r) => {
-                if (r.status === 200) {
-                  location.href = QRLink.href;
-                } else {
-                  const id = "新生群expl";
-                  if (document.getElementById(id)) return;
-                  const expl = document.createElement("p");
-                  expl.id = id;
-                  expl.textContent =
-                    "LINE似乎不願意直接開啟這個連結，請試試看用手機掃描";
-                  QRLink.after(expl);
-                }
-              },
-            );
-          });
-        }
-      }
+      // {
+      //   const QRLink = document.getElementById("新生群");
+      //   if (typeof QRLink !== "undefined") {
+      //     QRLink.addEventListener("click", (e) => {
+      //       e.preventDefault();
+      //       fetch(QRLink.href, { method: "head", redirect: "manual" }).then(
+      //         (r) => {
+      //           if (r.status === 200) {
+      //             location.href = QRLink.href;
+      //           } else {
+      //             const id = "新生群expl";
+      //             if (document.getElementById(id)) return;
+      //             const expl = document.createElement("p");
+      //             expl.id = id;
+      //             expl.textContent =
+      //               "LINE似乎不願意直接開啟這個連結，請試試看用手機掃描";
+      //             QRLink.after(expl);
+      //           }
+      //         },
+      //       );
+      //     });
+      //   }
+      // }
     </script>
   </body>
 </html>
