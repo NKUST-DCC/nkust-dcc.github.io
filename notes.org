@@ -1,5 +1,22 @@
 #+title: Notes
 
+* 行事曆
+
+歷年與目前的社團行事曆。
+
+命名： =109-2= 意指109學年度第二學期，也就是2021年2月到2021年6月的這個學期。
+
+*109學年是指民國109(2020)年開始的學年* 。所以即使下學期是2021年，學年度仍然是109。
+
+** 轉檔
+
+#+begin_src sh :results output
+name=name
+pdftoppm "$name".pdf > "$name".ppm
+magick "$name".ppm "$name".png
+rm "$name".ppm
+#+end_src
+
 * static/assets
 ** 檔案大小
 這裡的目的不是要當高畫質的儲存空間，而 [[https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#usage-limits][GitHub Pages的總空間只有1GB]]。原檔都在內部的資料夾裡。
