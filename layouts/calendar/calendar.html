@@ -18,7 +18,7 @@
       <img class="shadow rounded-lg constrain-width"
            src="{{ printf "/assets/calendar/%s.png" $this }}">
     </article>
-    <aside>
+    <aside class="side-menu">
       <ul>
         {{ range (sort (where .Site.RegularPages "Section" "calendar") "Title" "desc") }}
           <li>

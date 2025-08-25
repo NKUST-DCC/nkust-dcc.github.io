@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 @layer base {
-  aside {
+  aside.side-menu {
     ul {
       list-style: none;
       padding: 0;

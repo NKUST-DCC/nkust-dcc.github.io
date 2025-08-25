@@ -22,7 +22,7 @@
     <article>
       {{ partial "pdf" (printf "/assets/組織章程/%s.pdf" $this) }}
     </article>
-    <aside>
+    <aside class="side-menu">
       <ul>
         <!-- prettier-ignore -->
         {{ range (sort (where .Site.RegularPages "Section" "組織章程") "Title" "desc")}}
