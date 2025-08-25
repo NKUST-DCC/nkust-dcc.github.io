@@ -1,8 +1,14 @@
-<!-- {{ $title := "中間是戴著眼鏡的豐川祥子的 LINE 群組 QR Code" }}
-     <a id="新生群" title="{{ $title }}" href="">
-     <img src="/assets/line/line-113.png" alt="{{ $title }}" />
-     </a>
-     <p>(LINE在電腦上會拒絕打開連結，如果跑到LINE首頁去的話請試著改用手機掃描……)</p> -->
-
-<!-- 需要有東西 Hugo 才不會回報錯誤... -->
-<div />
+{{ if true }}
+  {{ $title := "中間是戴著眼鏡的豐川祥子的 LINE 群組 QR Code" }}
+  <div>
+    <a id="新生群" title="{{ $title }}" href="https://line.me/ti/g/4SyxeEfJAL">
+      <img src="/assets/line/line-114.png" alt="{{ $title }}" />
+    </a>
+    <p>
+      (LINE在電腦上會拒絕打開連結，如果跑到LINE首頁去的話請試著改用手機掃描……)
+    </p>
+  </div>
+{{ else }}
+  <!-- 需要有東西 Hugo 才不會回報錯誤... -->
+  <div />
+{{ end }}
