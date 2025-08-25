@@ -1,17 +1,34 @@
 {{ define "main" }}
-  <section>
-    <h1>#{{ .Title }}</h1>
-    {{ .Content }}
-    <!-- prettier-ignore -->
-    <!-- 用 desc 這樣會最近的學期會在最上面 -->
-    {{ range (.Pages.GroupByParam "semester" "desc") }}
-      <h2>{{ partial "func-human-semester" .Key }}</h2>
-      <ul class="cards">
-        <!-- Group裡面的頁面已經是最新的在最上面了 -->
-        {{ range .Pages }}
-          <li>{{ partial "card" . }}</li>
-        {{ end }}
-      </ul>
-    {{ end }}
-  </section>
+  <div class="md:two-columns">
+    <section>
+      <h1>#{{ .Title }}</h1>
+      {{ .Content }}
+      <!-- 用 desc 這樣會最近的學期會在最上面 -->
+      {{ range (.Pages.GroupByParam "semester" "desc") }}
+        <h2 class="pt-4" id="semester-{{ .Key }}">
+          {{ partial "func-human-semester" .Key }}
+        </h2>
+        <ul class="cards">
+          <!-- Group裡面的頁面已經是最新的在最上面了 -->
+          {{ range .Pages }}
+            <li>{{ partial "card" . }}</li>
+          {{ end }}
+        </ul>
+      {{ end }}
+    </section>
+    <div>
+      <aside class="">
+        <h2>標籤</h2>
+        <ul class="list-none">
+          {{ range .Site.Taxonomies.tags }}
+            <li>
+              <a href="{{ .Page.Permalink }}"
+                >#{{ .Page.Title }}({{ .Count }})</a
+              >
+            </li>
+          {{ end }}
+        </ul>
+      </aside>
+    </div>
+  </div>
 {{ end }}
