@@ -2,9 +2,8 @@
 // -*- mode: typescript; lsp-disabled-clients: (ts-ls); -*-
 
 import * as path from "node:path";
-
-import { $ } from "npm:zx";
-import { program } from "npm:commander";
+import { $ } from "zx";
+import { program } from "commander";
 
 program
   .command("add-calendar")

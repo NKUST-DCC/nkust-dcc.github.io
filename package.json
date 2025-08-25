@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "@types/node": "^24.3.0",
     "concurrently": "^6.5.1",
     "prettier": "^3.3.3",
     "prettier-plugin-go-template": "^0.0.15"
