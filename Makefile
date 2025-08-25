@@ -52,7 +52,7 @@ content: content/組織章程 content/calendar
 
 # 自動為assets下每個行事曆的檔案產生一個頁面
 content/calendar: static/assets/calendar
-	for f in static/assets/calendar/*.pdf; do printf -- "---\ntitle: %s 社團行事曆\n---" $$(basename "$$f" .pdf) > content/calendar/$$(basename $$f .pdf).md; done
+	for f in static/assets/calendar/*.png; do printf -- "---\ntitle: %s 社團行事曆\n---" $$(basename "$$f" .png) > content/calendar/$$(basename $$f .png).md; done
 
 content/組織章程: static/assets/組織章程
 	for f in static/assets/組織章程/*.pdf; do printf -- "---\ntitle: %s 組織章程\n---" $$(basename "$$f" .pdf) > content/組織章程/$$(basename $$f .pdf).md; done
