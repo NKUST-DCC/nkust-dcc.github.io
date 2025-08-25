@@ -1,14 +1,11 @@
 {{ define "main" }}
-  <!-- prettier-ignore -->
   {{ $歷年組織章程 := (where .Site.RegularPages "Section" "組織章程") }}
-{{ $歷年組織章程 = (sort $歷年組織章程 "Title" "desc") }}
-  
+  {{ $歷年組織章程 = (sort $歷年組織章程 "Title" "desc") }}
 
-{{ $latest := (index $歷年組織章程 0).File.BaseFileName }}
-  
+  {{ $latest := (index $歷年組織章程 0).File.BaseFileName }}
 
-{{ $this := "" }}
-{{ if .IsSection }}
+  {{ $this := "" }}
+  {{ if .IsSection }}
     {{ $this = $latest }}
   {{ else }}
     {{ $this = .File.BaseFileName }}
@@ -24,12 +21,11 @@
     </article>
     <aside class="side-menu">
       <ul>
-        <!-- prettier-ignore -->
-        {{ range (sort (where .Site.RegularPages "Section" "組織章程") "Title" "desc")}}
-      <li>
-        {{ partial "cura" (dict "ctx" $ "href" .Permalink "text" .Title) }}
-      </li>
-      {{ end }}
+        {{ range (sort (where .Site.RegularPages "Section" "組織章程") "Title" "desc") }}
+          <li>
+            {{ partial "cura" (dict "ctx" $ "href" .Permalink "text" .Title) }}
+          </li>
+        {{ end }}
       </ul>
     </aside>
   </div>
