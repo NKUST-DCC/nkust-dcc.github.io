@@ -4,6 +4,9 @@ public
 
 node_modules/
 static/css/built.css
+static/css/*.min.css
+# lightbox2 images
+static/images/
 *.map
 
 content/calendar/*.md

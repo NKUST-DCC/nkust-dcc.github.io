@@ -5,6 +5,7 @@
     "prettier-plugin-go-template": "^0.0.15"
   },
   "dependencies": {
+    "lightbox2": "^2.11.5",
     "medium-zoom": "^1.0.8",
     "tailwindcss": "^3.3.2"
   },

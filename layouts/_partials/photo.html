@@ -1,2 +1,4 @@
 {{ $path := . }}
-<img loading="lazy" class="md:max-h-[16rem]" src="{{ $path }}" />
+<a href="{{ $path }}" data-lightbox="photos">
+  <img loading="lazy" class="photo md:max-h-[16rem]" src="{{ $path }}" />
+</a>

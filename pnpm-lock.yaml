@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      lightbox2:
+        specifier: ^2.11.5
+        version: 2.11.5
       medium-zoom:
         specifier: ^1.0.8
         version: 1.0.8
@@ -233,6 +236,9 @@ packages:
   jiti@1.18.2:
     resolution: {integrity: sha512-QAdOptna2NYiSSpv0O/BwoHBSmz4YhpzJHyi+fnMRTXFjp7B8i/YG5Z8IfusxB1ufjcD2Sre1F3R+nX3fvy7gg==}
     hasBin: true
+
+  lightbox2@2.11.5:
+    resolution: {integrity: sha512-IsDqv/D9pjgh7GvwTNvmHF98+nrIcOD17fraXgtx8ivq469y95l5ycLi6SeZAZHdeyD3cGLjYwbDX8SRfWx5fA==}
 
   lilconfig@2.1.0:
     resolution: {integrity: sha512-utWOt/GHzuUxnLKxB6dk81RoOeoNeHgbrXiuGk4yyF5qlRz+iIVWu56E2fqGHFrXz0QNUhLB/8nKqvRH66JKGQ==}
@@ -676,6 +682,8 @@ snapshots:
   is-number@7.0.0: {}
 
   jiti@1.18.2: {}
+
+  lightbox2@2.11.5: {}
 
   lilconfig@2.1.0: {}
 
