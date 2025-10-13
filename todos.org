@@ -1,4 +1,4 @@
-* [60%] [110/183] 沒有現存文章而需要補充的活動頁面
+* [60%] [110/183] Todos
 :PROPERTIES:
 :COOKIE_DATA: recursive
 :END:
@@ -185,3 +185,16 @@
 *** TODO 112-2 期末
 *** TODO 112-2 歌謠
 *** TODO 112-2 文庫
+** TODO 113-1, 113-2
+Probably check Line group for photos
+
+Probably pick ones that show the essence but not too many faces
+
+** TODO 114-1
+** TODO digitize some old data (like the 2003 stuff)
+
+…maybe.
+
+** TODO old 幹部
+
+How we might do this without disclosing /too much/ private information is a balancing act that must be done well. Up to (nick)names, for nostalgia for old members? Sure. Literally contact methods? No.
