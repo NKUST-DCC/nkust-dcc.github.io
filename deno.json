@@ -1,0 +1,3 @@
+// Empty file but needed for Deno LSP to work.
+// Unfortunately.
+{}

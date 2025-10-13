@@ -2,6 +2,7 @@
 // -*- mode: typescript; lsp-disabled-clients: (ts-ls); -*-
 
 import * as path from "node:path";
+import * as process from "node:process";
 import { $ } from "zx";
 import { program } from "commander";
 
@@ -20,6 +21,26 @@ program
     } else {
       await $`magick ${calendarFile} static/assets/calendar/${newName}.png`;
     }
+  });
+
+program
+  .command("compress")
+  .description("Compress photos in a folder")
+  .argument("<dir>", "The directory, liks static/assets/20221018")
+  .action(async (dir: string) => {
+    const $$ = $({ verbose: true });
+    const startingDir = process.cwd();
+    await $$`du -h ${dir}`;
+    await $$`
+  cd ${dir}
+  mkdir -p smaller
+  parallel gm convert -resize x1080 '{}' smaller/'{.}'.jpg ::: $(find -iregex ".*\\.\\(jpe?g\\|heic\\)")
+  mv smaller/*.jpg .
+  find -regex ".*\.\(jpeg\|JPG\|HEIC\)" -exec rm '{}' ';'
+  rm smaller -r
+`;
+    process.chdir(startingDir);
+    await $$`du -h ${dir}`;
   });
 
 await program.parseAsync();
