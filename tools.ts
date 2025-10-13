@@ -30,8 +30,13 @@ program
   .action(async (dir: string) => {
     const $$ = $({ verbose: true });
     const startingDir = process.cwd();
+    console.log("Before:");
     await $$`du -h ${dir}`;
-    await $$`
+    console.log("Resizing to height = 1080...");
+    console.log(
+      "(This assumes no photo is smaller than that, they might become bigger in that case)",
+    );
+    await $`
   cd ${dir}
   mkdir -p smaller
   parallel gm convert -resize x1080 '{}' smaller/'{.}'.jpg ::: $(find -iregex ".*\\.\\(jpe?g\\|heic\\)")
@@ -40,7 +45,9 @@ program
   rm smaller -r
 `;
     process.chdir(startingDir);
+    console.log("After:");
     await $$`du -h ${dir}`;
+    console.log("Please check git log for any anomolies! This code is janky.");
   });
 
 await program.parseAsync();
