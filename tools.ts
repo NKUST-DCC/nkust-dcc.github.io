@@ -50,4 +50,24 @@ program
     console.log("Please check git log for any anomolies! This code is janky.");
   });
 
+program
+  .command("add-post")
+  .description("Add a post based on a photo folder")
+  .argument("<semester>", "The semester")
+  .argument("<dir>", "The photo folder")
+  .action(async (semester: string, dir: string) => {
+    `
+---
+title: %s.%s.%s %s
+date: %s-%s-%s
+tags: [社團活動, %s]
+author: 如月
+semester: %s
+cover: %s
+---
+
+${photos.map((path) => `![](${path})`).join("\n")}
+%s`.trim();
+  });
+
 await program.parseAsync();
