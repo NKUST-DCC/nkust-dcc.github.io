@@ -4,7 +4,7 @@
 >
   <img
     class="w-full h-4/5 object-cover rounded-t-lg"
-    src="{{ or .Params.cover "/assets/20210505/_MG_4277.JPG" }}"
+    src="{{ or .Params.thumb .Params.cover "/assets/20210505/_MG_4277.JPG" }}"
     loading="lazy"
   />
   <span class="mx-4 my-2">{{ .Title }}</span>
