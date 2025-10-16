@@ -1,7 +1,6 @@
 #!/usr/bin/env -S deno run -A
 // -*- mode: typescript; lsp-disabled-clients: (ts-ls); -*-
 
-import * as path from "node:path";
 import * as process from "node:process";
 import { $ } from "zx";
 import { program } from "commander";
@@ -14,12 +13,12 @@ program
   .action(async (calendarFile: string, newName: string) => {
     if (calendarFile.endsWith(".pdf")) {
       await $`pdftoppm ${calendarFile} > ${newName}.ppm`;
-      await $`magick ${newName}.ppm ${newName}.png`;
+      await $`gm convert ${newName}.ppm ${newName}.png`;
       await $`rm ${newName}.ppm`;
       await $`mv ${newName}.png static/assets/calendar`;
       await $`cp ${calendarFile} static/assets/calendar/${newName}.pdf`;
     } else {
-      await $`magick ${calendarFile} static/assets/calendar/${newName}.png`;
+      await $`gm convert ${calendarFile} static/assets/calendar/${newName}.png`;
     }
   });
 
