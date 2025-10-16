@@ -18,7 +18,9 @@ markup:
 # 我會用README檔來解釋各個資料夾的意義，但我們不希望這些檔案被輸出。
 ignoreFiles:
   - README\.md$
+  - README\.org$
   - readme\.md$
+  - readme\.org$
 
 # 有些Hugo模板語言的函數需要這個才能產生正確的連結
 baseURL: https://nkust-dcc.github.io
