@@ -2,8 +2,21 @@
 // -*- mode: typescript; lsp-disabled-clients: (ts-ls); -*-
 
 import * as process from "node:process";
+import { writeFileSync } from "node:fs";
 import { $ } from "zx";
 import { program } from "commander";
+
+/**
+ * Return semester (as eg. "110-1") from the ROC year and month.
+ */
+function getSemester(rocYear: number, month: number) {
+  if (2 < month && month < 8) {
+    // the second semester starts on 02-01 and ends on 07-31
+    return `${rocYear - 1}-2`;
+  } else {
+    return `${rocYear}-1`;
+  }
+}
 
 program
   .command("add-calendar")
@@ -51,22 +64,29 @@ program
 
 program
   .command("add-post")
-  .description("Add a post based on a photo folder")
-  .argument("<semester>", "The semester")
-  .argument("<dir>", "The photo folder")
-  .action(async (semester: string, dir: string) => {
-    `
+  .description("Add a new generic post")
+  .argument("<date>", "The date in YYYYMMDD")
+  .action((date: string) => {
+    if (typeof date !== "string" || date.length !== 8) {
+      throw new Error("Date should be YYYYMMDD");
+    }
+    const year = parseInt(date.slice(0, 4));
+    const rocYear = year - 1911;
+    const month = parseInt(date.slice(4, 6));
+    const semester = getSemester(rocYear, month);
+    const day = date.slice(6, 8);
+    writeFileSync(
+      `content/posts/${date}.md`,
+      `
 ---
-title: %s.%s.%s %s
-date: %s-%s-%s
-tags: [社團活動, %s]
+title: ${year}.${month}.${day} %s
+date: ${year}-${month}-${day}
+tags: [社團活動, 告知]
 author: 如月
-semester: %s
-cover: %s
----
-
-${photos.map((path) => `![](${path})`).join("\n")}
-%s`.trim();
+semester: ${semester}
+# cover: TODO
+---`.trim(),
+    );
   });
 
 await program.parseAsync();
