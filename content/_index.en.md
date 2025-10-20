@@ -1,6 +1,6 @@
 ---
 title: 高科大夢想漫研
-cover: /assets/20240528/310519.jpg
+cover: /assets/20211201/LINE_P20211201_234805897.jpg
 ---
 
 [This translation is a work in progress.]
