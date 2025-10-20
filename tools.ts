@@ -38,27 +38,26 @@ program
 program
   .command("compress")
   .description("Compress photos in a folder")
-  .argument("<dir>", "The directory, liks static/assets/20221018")
+  .argument("<dir>", "The directory in static/assets/, like 20221018")
   .action(async (dir: string) => {
     const $$ = $({ verbose: true });
-    const startingDir = process.cwd();
+    const fullDir = `static/assets/${dir}`;
     console.log("Before:");
-    await $$`du -h ${dir}`;
+    await $$`du -h ${fullDir}`;
     console.log("Resizing to height = 1080...");
     console.log(
       "(This assumes no photo is smaller than that, they might become bigger in that case)",
     );
     await $`
-  cd ${dir}
+  cd ${fullDir}
   mkdir -p smaller
   parallel gm convert -resize x1080 '{}' smaller/'{.}'.jpg ::: $(find -iregex ".*\\.\\(jpe?g\\|heic\\)")
   mv smaller/*.jpg .
   find -regex ".*\.\(jpeg\|JPG\|HEIC\)" -exec rm '{}' ';'
   rm smaller -r
 `;
-    process.chdir(startingDir);
     console.log("After:");
-    await $$`du -h ${dir}`;
+    await $$`du -h ${fullDir}`;
     console.log("Please check git log for any anomolies! This code is janky.");
   });
 
