@@ -1,4 +1,8 @@
-* [62%] [126/201] Todos
+* Migrate from fc2
+
+[...document.querySelector(".main_block").querySelectorAll('a:has(img)')].map((el)=>el.href.replace("http://nkfustacgclub.blog.fc2.com/img/", "").slice(0, -1)).join("\n")
+
+* [63%] [128/201] Todos
 :PROPERTIES:
 :COOKIE_DATA: recursive
 :END:
@@ -19,10 +23,10 @@
 *** TODO 107-09-26 社集
 *** TODO 107-10-16 社課
 *** TODO 107-10-17 社集
-*** TODO 107-10-18 期初聚餐
+*** DONE 107-10-18 期初聚餐
 *** TODO 107-10-23 社課
 *** TODO 107-11-13 社課
-*** TODO 107-11-14 文庫展
+*** DONE 107-11-14 文庫展
 *** TODO 107-11-20 社課
 *** TODO 107-11-21 社集
 *** TODO 107-11-27 社課
