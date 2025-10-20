@@ -1,0 +1,20 @@
+#+title: Tags
+
+* Weekly events
+** 社課
+** 社集
+* Regular (but not weekly) events
+** 社團嘉年華
+** 期初茶會
+** 文庫展
+** 歌謠祭
+** 社員大會
+** 聚餐
+** 期初聚餐
+** 期末聚餐
+* Irregular events
+** 聖誕節
+** 南區大專院校聯萌
+* Misc.
+** 告知
+** 社團活動

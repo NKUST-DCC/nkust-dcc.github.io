@@ -1,8 +1,8 @@
 #!/usr/bin/env -S deno run -A
 // -*- mode: typescript; lsp-disabled-clients: (ts-ls); -*-
 
-import * as process from "node:process";
-import { writeFileSync } from "node:fs";
+import * as path from "node:path";
+import { writeFileSync, readdirSync } from "node:fs";
 import { $ } from "zx";
 import { program } from "commander";
 
@@ -61,9 +61,17 @@ program
     console.log("Please check git log for any anomolies! This code is janky.");
   });
 
+function directoryFiles(dir: string) {
+  try {
+    return readdirSync(dir).map((x) => path.join(dir, x));
+  } catch (_e) {
+    return [];
+  }
+}
+
 program
   .command("add-post")
-  .description("Add a new generic post")
+  .description("Add a new post")
   .argument("<date>", "The date in YYYYMMDD")
   .action((date: string) => {
     if (typeof date !== "string" || date.length !== 8) {
@@ -80,11 +88,16 @@ program
 ---
 title: ${year}.${month}.${day} %s
 date: ${year}-${month}-${day}
-tags: [社團活動, 告知]
+tags: [社團活動]
 author: 如月
 semester: ${semester}
-# cover: TODO
----`.trim(),
+cover: /assets/
+---
+
+${directoryFiles(`static/assets/${date}`)
+  .map((path) => `{{< photo "${path.replace("static/", "/")}" >}}`)
+  .join("\n")}
+`.trim(),
     );
   });
 
