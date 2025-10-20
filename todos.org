@@ -1,4 +1,4 @@
-* [62%] [116/187] Todos
+* [62%] [120/193] Todos
 :PROPERTIES:
 :COOKIE_DATA: recursive
 :END:
@@ -158,7 +158,7 @@
 *** DONE 1120502社課
 *** DONE 1120504社集
 *** DONE 1120509社課
-** DONE 112學年度1
+** TODO 112學年度1
 *** DONE 1120926社課
 *** DONE 1121003社課
 *** DONE 1121024社課
@@ -167,7 +167,11 @@
 *** DONE 1121128社課
 *** DONE 1121205社課
 *** DONE 1121212社課
-** DONE 112學年度2
+*** TODO 112-1 期初
+*** TODO 112-1 期末
+*** TODO 112-1 歌謠
+*** TODO 112-1 文庫
+** TODO 112學年度2
 *** DONE 1130305社課
 *** DONE 1130312社課
 *** DONE 1130319社課
@@ -176,20 +180,26 @@
 *** DONE 1130514社課
 *** DONE 1130521社課
 *** DONE 1130528社課
-** TODO Other events
-*** TODO 112-1 期初
-*** TODO 112-1 期末
-*** TODO 112-1 歌謠
-*** TODO 112-1 文庫
 *** TODO 112-2 期初
 *** TODO 112-2 期末
 *** TODO 112-2 歌謠
 *** TODO 112-2 文庫
-** TODO 113-1, 113-2
-Probably check Line group for photos
-
-Probably pick ones that show the essence but not too many faces
-
+** TODO 113-1
+*** DONE 20241015 社課
+*** DONE 20241119 社課
+*** DONE 20241126 社課
+*** DONE 20241203 社課
+*** DONE 20241210 社課
+*** DONE 20241217 社課
+*** TODO 113-1 期初
+*** TODO 113-1 期末
+*** TODO 113-1 歌謠
+*** TODO 113-1 文庫
+** TODO 113-2
+*** TODO 113-2 期初
+*** TODO 113-2 期末
+*** TODO 113-2 歌謠
+*** TODO 113-2 文庫
 ** TODO 114-1
 ** TODO digitize some old data (like the 2003 stuff)
 
