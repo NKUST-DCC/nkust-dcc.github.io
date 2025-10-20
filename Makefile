@@ -65,6 +65,8 @@ content/組織章程: static/assets/組織章程
 	for f in static/assets/組織章程/*.pdf; do
 		printf -- "---\ntitle: %s 組織章程\n---" $$(basename "$$f" .pdf) > \
 			content/組織章程/$$(basename $$f .pdf).md
+		printf -- "---\ntitle: %s Standard Constitution\n---" $$(basename "$$f" .pdf) > \
+			content/組織章程/$$(basename $$f .pdf).en.md
 	done
 
 deps:
