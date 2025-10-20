@@ -2,7 +2,7 @@
 
 [...document.querySelector(".main_block").querySelectorAll('a:has(img)')].map((el)=>el.href.replace("http://nkfustacgclub.blog.fc2.com/img/", "").slice(0, -1)).join("\n")
 
-* [63%] [128/201] Todos
+* [64%] [129/201] Todos
 :PROPERTIES:
 :COOKIE_DATA: recursive
 :END:
@@ -19,7 +19,7 @@
 *** TODO 107-05-02 社集照片
 *** TODO 107-05-23歌謠季
 ** TODO 107-1
-*** TODO 107-09-25 期初茶會
+*** DONE 107-09-25 期初茶會
 *** TODO 107-09-26 社集
 *** TODO 107-10-16 社課
 *** TODO 107-10-17 社集
