@@ -35,21 +35,17 @@ program
     }
   });
 
-program
-  .command("compress")
-  .description("Compress photos in a folder")
-  .argument("<dir...>", "The directories in static/assets/, like 20221018")
-  .action(async (dirs: string[]) => {
-    const $$ = $({ verbose: true });
-    for (const dir of dirs) {
-      const fullDir = `static/assets/${dir}`;
-      console.log("Before:");
-      await $$`du -h ${fullDir}`;
-      console.log("Resizing to height = 1080...");
-      console.log(
-        "(This assumes no photo is smaller than that, they might become bigger in that case)",
-      );
-      await $`
+async function compress(dirs: string[]) {
+  const $$ = $({ verbose: true });
+  for (const dir of dirs) {
+    const fullDir = `static/assets/${dir}`;
+    console.log("Before:");
+    await $$`du -h ${fullDir}`;
+    console.log("Resizing to height = 1080...");
+    console.log(
+      "(This assumes no photo is smaller than that, they might become bigger in that case)",
+    );
+    await $`
   cd ${fullDir}
   mkdir -p smaller
   parallel gm convert -resize x1080 '{}' smaller/'{.}'.jpg ::: $(find -iregex ".*\\.\\(jpe?g\\|heic\\)")
@@ -57,12 +53,18 @@ program
   find -regex ".*\.\(jpeg\|JPG\|HEIC\)" -exec rm '{}' ';'
   rm smaller -r
 `;
-      console.log("After:");
-      await $$`du -h ${fullDir}`;
-      console.log(
-        "Please check git log for any anomolies! This code is janky.",
-      );
-    }
+    console.log("After:");
+    await $$`du -h ${fullDir}`;
+    console.log("Please check git log for any anomolies! This code is janky.");
+  }
+}
+
+program
+  .command("compress")
+  .description("Compress photos in a folder")
+  .argument("<dir...>", "The directories in static/assets/, like 20221018")
+  .action(async (dirs: string[]) => {
+    await compress(dirs);
   });
 
 function directoryFiles(dir: string) {
@@ -80,9 +82,13 @@ program
   .description("Add a new post")
   .argument("<date>", "The date in YYYYMMDD")
   .argument("[title]", "The title", "TODO")
-  .action((date: string, title: string) => {
+  .option("--compress", "Also compress the assets folder if it exists")
+  .action(async (date: string, title: string, opts: { compress?: boolean }) => {
     if (typeof date !== "string" || date.length !== 8) {
       throw new Error("Date should be YYYYMMDD");
+    }
+    if (opts?.compress) {
+      await compress([date]);
     }
     const year = parseInt(date.slice(0, 4));
     const rocYear = year - 1911;
