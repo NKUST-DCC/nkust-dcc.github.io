@@ -96,21 +96,27 @@ program
     const semester = getSemester(rocYear, parseInt(month));
     const day = date.slice(6, 8);
     const filename = `content/posts/${date}.md`;
+    const photos = directoryFiles(`static/assets/${date}`).map(
+      (path) => `${path.replace("static/", "/")}`,
+    );
+    const now = new Date();
+    function pad(v: number) {
+      return `${v}`.padStart(2, "0");
+    }
     writeFileSync(
       filename,
       `
 ---
 title: ${year}.${month}.${day} ${title}
 date: ${year}-${month}-${day}
+published: ${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}
 tags: [社團活動, ${title}]
 author: 如月
 semester: ${semester}
-cover:
+cover: ${photos[0]}
 ---
 
-${directoryFiles(`static/assets/${date}`)
-  .map((path) => `{{< photo "${path.replace("static/", "/")}" >}}`)
-  .join("\n")}
+${photos.map((path) => `{{< photo "${path}" >}}`).join("\n")}
 `.trim(),
     );
     console.log(`Created ${filename}`);
