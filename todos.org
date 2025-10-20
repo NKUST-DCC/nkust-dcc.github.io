@@ -1,4 +1,4 @@
-* [61%] [115/187] Todos
+* [62%] [116/187] Todos
 :PROPERTIES:
 :COOKIE_DATA: recursive
 :END:
@@ -51,7 +51,7 @@
 *** TODO 108-05-23 歌謠祭
 *** TODO 108-06-4 社課
 *** TODO 108-06-5 期末聚餐
-** TODO 108學年
+** DONE 108學年
 *** DONE 108-09-18 社團嘉年華
 *** DONE 108-09-26 新生茶會
 *** DONE 108-10-01 社課
