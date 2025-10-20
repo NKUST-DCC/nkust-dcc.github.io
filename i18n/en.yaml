@@ -11,3 +11,14 @@
 新生專區/入社: Join
 Twitter: Twitter
 組織章程: Standard Constitution
+
+學年度: "Academic year {{ . }}"
+
+社長: President
+副社長: Vice President
+總務: Treasurer
+美宣: Design
+公關: Publicity
+活動: Activities
+紀錄: Secretary
+資訊: IT
