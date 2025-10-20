@@ -63,7 +63,9 @@ program
 
 function directoryFiles(dir: string) {
   try {
-    return readdirSync(dir).map((x) => path.join(dir, x));
+    return readdirSync(dir)
+      .map((x) => path.join(dir, x))
+      .sort();
   } catch (_e) {
     return [];
   }
@@ -73,20 +75,21 @@ program
   .command("add-post")
   .description("Add a new post")
   .argument("<date>", "The date in YYYYMMDD")
-  .action((date: string) => {
+  .argument("[title]", "The title", "TODO")
+  .action((date: string, title: string) => {
     if (typeof date !== "string" || date.length !== 8) {
       throw new Error("Date should be YYYYMMDD");
     }
     const year = parseInt(date.slice(0, 4));
     const rocYear = year - 1911;
-    const month = parseInt(date.slice(4, 6));
-    const semester = getSemester(rocYear, month);
+    const month = date.slice(4, 6);
+    const semester = getSemester(rocYear, parseInt(month));
     const day = date.slice(6, 8);
     writeFileSync(
       `content/posts/${date}.md`,
       `
 ---
-title: ${year}.${month}.${day} %s
+title: ${year}.${month}.${day} ${title}
 date: ${year}-${month}-${day}
 tags: [社團活動]
 author: 如月
