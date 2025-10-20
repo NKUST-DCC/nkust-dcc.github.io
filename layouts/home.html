@@ -2,13 +2,13 @@
   <div class="gap-x-8 md:flex">
     <div class="md:w-1/2">
       {{ .Content }}
-      <a class="btn" href="/join">加入社團</a>
+      <a class="btn" href="{{ absLangURL "join" }}">{{ T "加入社團" }}</a>
     </div>
     <div class="md:w-1/2">
       {{ partial "新生群" . }}
     </div>
   </div>
-  <h1 class="mt-8">最近活動</h1>
+  <h1 class="mt-8">{{ T "最近活動" }}</h1>
   <ul class="cards">
     {{ $relevant_pages := (where .Site.RegularPages "Params.tags" "intersect" (slice "社團活動")) }}
     {{ range (first 4 $relevant_pages.ByDate.Reverse) }}
@@ -16,11 +16,11 @@
     {{ end }}
   </ul>
   <div class="text-center">
-    <a class="btn" href="/tags/社團活動">更多活動紀錄</a>
+    <a class="btn" href="/tags/社團活動">{{ T "更多活動紀錄" }}</a>
   </div>
-  <h1 class="mt-8">認識我們</h1>
+  <h1 class="mt-8">{{ T "認識我們" }}</h1>
   {{ partial "幹部" . }}
   <div class="text-center">
-    <a class="btn" href="/about">關於我們</a>
+    <a class="btn" href="{{ absLangURL "/about" }}">{{ T "關於我們" }}</a>
   </div>
 {{ end }}

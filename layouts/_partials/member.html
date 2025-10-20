@@ -9,7 +9,7 @@
     />
   {{ end }}
   <div>
-    <div class="text-xl font-bold">{{ .role }}</div>
+    <div class="text-xl font-bold">{{ or (T .role) .role }}</div>
     <div class="text-xl block whitespace-nowrap md:inline">{{ .name }}</div>
     <div class="flex space-x-2">
       {{ with .pixiv }}

@@ -2,13 +2,16 @@
   {{ $calendars := (where .Site.RegularPages "Section" "calendar") }}
   {{ $calendars = (sort $calendars "Title" "desc") }}
 
-  {{ $latest := (index $calendars 0).File.BaseFileName }}
+  {{ $latest := (index $calendars 0).File.ContentBaseName }}
 
   {{ $this := "" }}
   {{ if .IsSection }}
     {{ $this = $latest }}
   {{ else }}
-    {{ $this = .File.BaseFileName }}
+    {{/* FIXME: using ContentBaseName we always use the zh-TW calendars. */}}
+    {{/* That's kind of unavoidable since the calendars aren't translated (yet). */}}
+    {{/* $this = .File.BaseFileName */}}
+    {{ $this = .File.ContentBaseName }}
   {{ end }}
 
 

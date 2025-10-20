@@ -5,6 +5,7 @@
     {{ $latest_year = $key }}
   {{ end }}
 {{ end }}
+<p>({{ T "學年度" $latest_year }})</p>
 <ul class="flex flex-wrap gap-6 list-none lg:w-full">
   {{ with (site).Data.幹部 }}
     {{ range (index . $latest_year) }}
@@ -12,4 +13,3 @@
     {{ end }}
   {{ end }}
 </ul>
-<p>({{ $latest_year }} 學年度)</p>

@@ -1,3 +1,5 @@
+.ONESHELL:
+
 # 先不管en_US，要求所有東西要用Unicode (UTF-8)。沒有這個的話有些環境輸
 # 出時會沒辦法支援檔案名稱裡面有中文字。
 export LANG=en_US.UTF-8
@@ -52,10 +54,20 @@ content: content/組織章程 content/calendar
 
 # 自動為assets下每個行事曆的檔案產生一個頁面
 content/calendar: static/assets/calendar
-	for f in static/assets/calendar/*.png; do printf -- "---\ntitle: %s 社團行事曆\n---" $$(basename "$$f" .png) > content/calendar/$$(basename $$f .png).md; done
+	for f in static/assets/calendar/*.png; do
+		printf -- "---\ntitle: %s 社團行事曆\n---" $$(basename "$$f" .png) > \
+			content/calendar/$$(basename $$f .png).md
+		printf -- "---\ntitle: Club calendar for %s\n---" $$(basename "$$f" .png) > \
+			content/calendar/$$(basename $$f .png).en.md
+	done
 
 content/組織章程: static/assets/組織章程
-	for f in static/assets/組織章程/*.pdf; do printf -- "---\ntitle: %s 組織章程\n---" $$(basename "$$f" .pdf) > content/組織章程/$$(basename $$f .pdf).md; done
+	for f in static/assets/組織章程/*.pdf; do
+		printf -- "---\ntitle: %s 組織章程\n---" $$(basename "$$f" .pdf) > \
+			content/組織章程/$$(basename $$f .pdf).md
+		printf -- "---\ntitle: %s Standard Constitution\n---" $$(basename "$$f" .pdf) > \
+			content/組織章程/$$(basename $$f .pdf).en.md
+	done
 
 deps:
 	mkdir -p static/js/
