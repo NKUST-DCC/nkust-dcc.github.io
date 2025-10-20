@@ -1,7 +1,18 @@
 {{ define "main" }}
   <article>
-    {{ with .Param "extra_note" }}
-      <p><em>編註：{{ safe.HTML . }}</em></p>
+    {{ if .Param "old_url" }}
+      {{ if .Param "extra_note" }}
+        <p>
+          <em
+            >（原本公開在<a href="{{ .Param "old_url" }}">舊網站</a
+            >；{{ .Param "extra_note" }}）</em
+          >
+        </p>
+      {{ else }}
+        <p>
+          <em>（原本公開在<a href="{{ .Param "old_url" }}">舊網站</a>）</em>
+        </p>
+      {{ end }}
     {{ end }}
     <h1 class="mb-4">{{ .Title }}</h1>
     {{ .Content }}
@@ -20,10 +31,11 @@
     {{ with (.Param "author") }}
       <div class="text-sm">作者: {{ . }}</div>
     {{ end }}
-    {{ with (.Param "extra_props") }}
-      {{ range $k, $v := . }}
-        <div class="text-sm">{{ $k }}: {{ $v }}</div>
-      {{ end }}
+    {{ with (.Param "migrated_editor") }}
+      <div class="text-sm">編輯: {{ . }}</div>
+    {{ end }}
+    {{ with (.Param "migrated_date") }}
+      <div class="text-sm">編輯日期: {{ partial "date" . }}</div>
     {{ end }}
   </div>
   {{ if (eq .Section "posts") }}
