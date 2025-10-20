@@ -2,7 +2,7 @@
   <div class="gap-x-8 md:flex">
     <div class="md:w-1/2">
       {{ .Content }}
-      <a class="btn" href="/join">{{ T "加入社團" }}</a>
+      <a class="btn" href="{{ absLangURL "join" }}">{{ T "加入社團" }}</a>
     </div>
     <div class="md:w-1/2">
       {{ partial "新生群" . }}
@@ -21,6 +21,6 @@
   <h1 class="mt-8">{{ T "認識我們" }}</h1>
   {{ partial "幹部" . }}
   <div class="text-center">
-    <a class="btn" href="/about">{{ T "關於我們" }}</a>
+    <a class="btn" href="{{ absLangURL "/about" }}">{{ T "關於我們" }}</a>
   </div>
 {{ end }}
