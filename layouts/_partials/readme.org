@@ -5,7 +5,7 @@
 - cura ::
 
   #+begin_src go-html-template
-  {{partial "cura" (dict "ctx" . "href" "/about/" "key" "關於")}}
+  {{partial "cura" (dict "ctx" . "href" "/about/" "text" "關於")}}
   #+end_src
 
   讓符合目前正在看的頁面的選項變成粗體。
@@ -14,7 +14,7 @@
 
   - ctx :: 目前頁面物件
   - href :: 該選項會開啟的連結。會 resolve 到目前語言，所以 =/about= 在英文版會連結到 =/en/about= 。
-  - key :: 顯示連結用的文字的翻譯鍵。新的字串請到 i18n/zh-TW.yaml 加入翻譯鍵和值，然後可以到其他語言去翻譯它。
+  - text :: 顯示連結用的文字。文字是 i18n/ 裡的翻譯鍵的時候會進行翻譯。
 
 - pdf ::
 

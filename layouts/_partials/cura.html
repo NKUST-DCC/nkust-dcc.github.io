@@ -1,6 +1,7 @@
 {{ $target := absLangURL .href }}
+{{ $text := (or (T .text) .text) }}
 {{ if (eq (absURL .ctx.Permalink) $target) }}
-  <a class="current" href="{{ $target }}">{{ T .key }}</a>
+  <a class="current" href="{{ $target }}">{{ $text }}</a>
 {{ else }}
-  <a href="{{ $target }}">{{ T .key }}</a>
+  <a href="{{ $target }}">{{ $text }}</a>
 {{ end }}
