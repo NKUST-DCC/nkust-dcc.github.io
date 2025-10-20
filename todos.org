@@ -213,6 +213,18 @@ Sharepoint 上這個叫做「社課」但很明顯是期初社員大會
 *** TODO 113-2 歌謠
 *** TODO 113-2 文庫
 ** TODO 114-1
+
+We need to ask:
+- How much are we able to show? The LINE photos are uploaded with the assumption they're only available to club members. We can't just upload all of them.
+- Should we announce this? Ask members about this?
+
+Process:
+
+- LINE → album → “Download album”, which will download all photos in one dedicated folder
+- These photos have no metadata, and are named by the download timestamp. They are downloaded new-first, so the last downloaded files are actually the oldest.
+- The created date is available in LINE's UI (and only there :eyeroll:). Once you have a manageable number of photos (maybe <10), you can check or update it manually.
+- Alternatively, if they have already uploaded to Instagram or Facebook, maybe just take that
+
 ** TODO digitize some old data (like the 2003 stuff)
 
 …maybe.
