@@ -38,17 +38,18 @@ program
 program
   .command("compress")
   .description("Compress photos in a folder")
-  .argument("<dir>", "The directory in static/assets/, like 20221018")
-  .action(async (dir: string) => {
+  .argument("<dir...>", "The directories in static/assets/, like 20221018")
+  .action(async (dirs: string[]) => {
     const $$ = $({ verbose: true });
-    const fullDir = `static/assets/${dir}`;
-    console.log("Before:");
-    await $$`du -h ${fullDir}`;
-    console.log("Resizing to height = 1080...");
-    console.log(
-      "(This assumes no photo is smaller than that, they might become bigger in that case)",
-    );
-    await $`
+    for (const dir of dirs) {
+      const fullDir = `static/assets/${dir}`;
+      console.log("Before:");
+      await $$`du -h ${fullDir}`;
+      console.log("Resizing to height = 1080...");
+      console.log(
+        "(This assumes no photo is smaller than that, they might become bigger in that case)",
+      );
+      await $`
   cd ${fullDir}
   mkdir -p smaller
   parallel gm convert -resize x1080 '{}' smaller/'{.}'.jpg ::: $(find -iregex ".*\\.\\(jpe?g\\|heic\\)")
@@ -56,9 +57,12 @@ program
   find -regex ".*\.\(jpeg\|JPG\|HEIC\)" -exec rm '{}' ';'
   rm smaller -r
 `;
-    console.log("After:");
-    await $$`du -h ${fullDir}`;
-    console.log("Please check git log for any anomolies! This code is janky.");
+      console.log("After:");
+      await $$`du -h ${fullDir}`;
+      console.log(
+        "Please check git log for any anomolies! This code is janky.",
+      );
+    }
   });
 
 function directoryFiles(dir: string) {
@@ -85,16 +89,17 @@ program
     const month = date.slice(4, 6);
     const semester = getSemester(rocYear, parseInt(month));
     const day = date.slice(6, 8);
+    const filename = `content/posts/${date}.md`;
     writeFileSync(
-      `content/posts/${date}.md`,
+      filename,
       `
 ---
 title: ${year}.${month}.${day} ${title}
 date: ${year}-${month}-${day}
-tags: [社團活動]
+tags: [社團活動, ${title}]
 author: 如月
 semester: ${semester}
-cover: /assets/
+cover:
 ---
 
 ${directoryFiles(`static/assets/${date}`)
@@ -102,6 +107,7 @@ ${directoryFiles(`static/assets/${date}`)
   .join("\n")}
 `.trim(),
     );
+    console.log(`Created ${filename}`);
   });
 
 await program.parseAsync();
