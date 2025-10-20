@@ -6,6 +6,10 @@ layoutDir: layouts
 publishDir: public
 staticDir: static
 
+# 就算現在是 2025-10-21 然後 published = 2025-10-21
+# 也拜託請編譯它
+buildFuture: true
+
 # 有些東西需要這個選項才會支援中文的樣子
 hasCJKLanguage: true
 
