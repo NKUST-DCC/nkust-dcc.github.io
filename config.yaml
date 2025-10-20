@@ -29,6 +29,22 @@ ignoreFiles:
 # 有些Hugo模板語言的函數需要這個才能產生正確的連結
 baseURL: https://nkust-dcc.github.io
 
+defaultContentLanguage: zh-TW
+languages:
+  zh-TW:
+    languageName: 繁體中文
+  en:
+    languageName: "English"
+    hasCJKLanguage: false
+    params:
+      sitename: "Dream Comic Club, NKUST (First Campus)"
+      description: |
+        We are the Dream Comic Club of NKUST!
+        (We're based in the First Campus.)
+        Do you want to share your thoughts on anime with like-minded people?
+        Do you want to improve drawing or manga skills but can't find a teacher?
+        This club can help you with both!
+
 Params:
   sitename: 高科大夢想漫研社
   description: |
