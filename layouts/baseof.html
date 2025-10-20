@@ -93,16 +93,16 @@
           class="text-lg list-none rounded flex max-md:flex-col md:w-full gap-x-4 gap-y-2"
         >
           <li class="md:inline-block">
-            {{ partial "cura" (dict "ctx" . "href" "/" "text" "首頁") }}
+            {{ partial "cura" (dict "ctx" . "href" (absLangURL "/") "text" "首頁") }}
           </li>
           <li class="md:inline-block">
-            {{ partial "cura" (dict "ctx" . "href" "/about/" "text" "關於") }}
+            {{ partial "cura" (dict "ctx" . "href" (absLangURL "/about/") "text" "關於") }}
           </li>
           <li class="md:inline-block">
             {{ partial "cura" (dict "ctx" . "href" "/tags/社團活動/" "text" "活動紀錄") }}
           </li>
           <li class="md:inline-block">
-            {{ partial "cura" (dict "ctx" . "href" "/calendar/" "text" "行事曆") }}
+            {{ partial "cura" (dict "ctx" . "href" (absLangURL "/calendar/") "text" "行事曆") }}
           </li>
           <li class="md:inline-block">
             {{ partial "cura" (dict "ctx" . "href" "/join/" "text" "新生專區/入社") }}
@@ -111,7 +111,7 @@
             <a href="https://twitter.com/DreamsComiC8763">Twitter</a>
           </li>
           <li class="md:inline-block">
-            {{ partial "cura" (dict "ctx" . "href" "/組織章程/" "text" "組織章程") }}
+            {{ partial "cura" (dict "ctx" . "href" (absLangURL "/組織章程/") "text" "組織章程") }}
           </li>
         </ul>
       </nav>
