@@ -5,7 +5,7 @@ cover: /assets/20240528/310519.jpg
 
 [This translation is a work in progress.]
 
-Welcome to the Dream Comic Club!
+Welcome to the Dream of Comic Club!
 
 We provide club classes at 19:00 on Tuesdays where a professional teacher comes to teach us drawing skills! We also hold a club gathering at 19:00 on Thursdays, where everyone can come to relax and chat about stuff with friends!
 
