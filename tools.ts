@@ -117,7 +117,7 @@ cover: ${photos[0]}
 ---
 
 ${photos.map((path) => `{{< photo "${path}" >}}`).join("\n")}
-`.trim(),
+`.trim() + "\n",
     );
     console.log(`Created ${filename}`);
   });
