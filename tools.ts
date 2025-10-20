@@ -80,32 +80,35 @@ function directoryFiles(dir: string) {
 program
   .command("add-post")
   .description("Add a new post")
-  .argument("<date>", "The date in YYYYMMDD")
-  .argument("[title]", "The title", "TODO")
+  .argument("<date...>", "The date in YYYYMMDD")
+  .option("--title <title>", "The title", "TODO")
   .option("--compress", "Also compress the assets folder if it exists")
-  .action(async (date: string, title: string, opts: { compress?: boolean }) => {
-    if (typeof date !== "string" || date.length !== 8) {
-      throw new Error("Date should be YYYYMMDD");
-    }
-    if (opts?.compress) {
-      await compress([date]);
-    }
-    const year = parseInt(date.slice(0, 4));
-    const rocYear = year - 1911;
-    const month = date.slice(4, 6);
-    const semester = getSemester(rocYear, parseInt(month));
-    const day = date.slice(6, 8);
-    const filename = `content/posts/${date}.md`;
-    const photos = directoryFiles(`static/assets/${date}`).map(
-      (path) => `${path.replace("static/", "/")}`,
-    );
-    const now = new Date();
-    function pad(v: number) {
-      return `${v}`.padStart(2, "0");
-    }
-    writeFileSync(
-      filename,
-      `
+  .action(
+    async (dates: string, opts: { title: string; compress?: boolean }) => {
+      function pad(v: number) {
+        return `${v}`.padStart(2, "0");
+      }
+      const title = opts.title;
+      for (const date of dates) {
+        if (typeof date !== "string" || date.length !== 8) {
+          throw new Error("Date should be YYYYMMDD");
+        }
+        if (opts?.compress) {
+          await compress([date]);
+        }
+        const year = parseInt(date.slice(0, 4));
+        const rocYear = year - 1911;
+        const month = date.slice(4, 6);
+        const semester = getSemester(rocYear, parseInt(month));
+        const day = date.slice(6, 8);
+        const filename = `content/posts/${date}.md`;
+        const photos = directoryFiles(`static/assets/${date}`).map(
+          (path) => `${path.replace("static/", "/")}`,
+        );
+        const now = new Date();
+        writeFileSync(
+          filename,
+          `
 ---
 title: ${year}.${month}.${day} ${title}
 date: ${year}-${month}-${day}
@@ -118,8 +121,10 @@ cover: ${photos[0]}
 
 ${photos.map((path) => `{{< photo "${path}" >}}`).join("\n")}
 `.trim() + "\n",
-    );
-    console.log(`Created ${filename}`);
-  });
+        );
+        console.log(`Created ${filename}`);
+      }
+    },
+  );
 
 await program.parseAsync();
