@@ -2,7 +2,7 @@
 
 [...document.querySelector(".main_block").querySelectorAll('a:has(img)')].map((el)=>el.href.replace("http://nkfustacgclub.blog.fc2.com/img/", "").slice(0, -1)).join("\n")
 
-* [64%] [129/201] Todos
+* [56%] [133/237] Todos
 :PROPERTIES:
 :COOKIE_DATA: recursive
 :END:
@@ -193,38 +193,59 @@ Sharepoint 上這個叫做「社課」但很明顯是期初社員大會
 *** TODO 112-2 期末
 *** TODO 112-2 歌謠
 *** TODO 112-2 文庫
-** TODO 113-1
+** [10/25] TODO 113-1
 *** DONE 20241015 社課
 *** DONE 20241119 社課
 *** DONE 20241126 社課
 *** DONE 20241203 社課
 *** DONE 20241210 社課
 *** DONE 20241217 社課
-*** 社集
-*** TODO 113-1 期初
-*** TODO 113-1 期末
-*** TODO 113-1 歌謠
-*** TODO 113-1 文庫
+*** TODO 20240918 燕巢校區社團嘉年華
+**** TODO photos
+**** TODO text
+*** TODO 20240926 第一校區社團嘉年華
+**** TODO photos
+**** TODO text
+*** DONE 20241008 新生茶會
+**** DONE photos
+**** DONE text
+*** DONE 20241022 文庫展
+*** TODO 20241024 期初聚餐
+**** TODO photos
+**** TODO text
+*** TODO 20241121 歌謠
+**** TODO photos
+**** TODO text
+*** TODO 20241224 期末社員大會兼期末聚餐
+**** TODO photos
+**** TODO text
 ** TODO 113-2
-*** 社課
-*** 社集
-*** TODO 113-2 期初
-*** TODO 113-2 期末
-*** TODO 113-2 歌謠
 *** TODO 113-2 文庫
+**** TODO photos
+**** TODO text
+*** TODO 日K社集
+**** TODO photos
+**** TODO text
+*** TODO 講座
+**** TODO photos
+**** TODO text
+*** TODO 113-2 歌謠
+**** TODO photos
+**** TODO text
+*** TODO 113-2 期末社員大會
+**** TODO photos
+**** TODO text
+*** TODO 113-2 期末聚餐
+**** TODO photos
+**** TODO text
+*** TODO 113-2 期初聚餐
+**** TODO photos
+**** TODO text
+*** TODO 113-2 期初社員大會
+**** TODO photos
+**** TODO text
 ** TODO 114-1
-
-We need to ask:
-- How much are we able to show? The LINE photos are uploaded with the assumption they're only available to club members. We can't just upload all of them.
-- Should we announce this? Ask members about this?
-
-Process:
-
-- LINE → album → “Download album”, which will download all photos in one dedicated folder
-- These photos have no metadata, and are named by the download timestamp. They are downloaded new-first, so the last downloaded files are actually the oldest.
-- The created date is available in LINE's UI (and only there :eyeroll:). Once you have a manageable number of photos (maybe <10), you can check or update it manually.
-- Alternatively, if they have already uploaded to Instagram or Facebook, maybe just take that
-
+** TODO 114-2
 ** TODO digitize some old data (like the 2003 stuff)
 
 …maybe.
