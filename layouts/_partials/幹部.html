@@ -1,13 +1,13 @@
 <!-- 取得資料裡最新的一年 -->
 {{ $latest_year := "0" }}
-{{ range $key, $val := (site).Data.幹部 }}
+{{ range $key, $val := hugo.Data.幹部 }}
   {{ if (gt $key $latest_year) }}
     {{ $latest_year = $key }}
   {{ end }}
 {{ end }}
 <p>({{ T "學年度" $latest_year }})</p>
 <ul class="flex flex-wrap gap-6 list-none lg:w-full">
-  {{ with (site).Data.幹部 }}
+  {{ with hugo.Data.幹部 }}
     {{ range (index . $latest_year) }}
       <li class="block w-full md:w-[45%]">{{ partial "member" . }}</li>
     {{ end }}
