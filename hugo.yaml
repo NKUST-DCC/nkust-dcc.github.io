@@ -31,9 +31,9 @@ baseURL: https://nkust-dcc.github.io
 defaultContentLanguage: zh-TW
 languages:
   zh-TW:
-    languageName: 繁體中文
+    label: 繁體中文
   en:
-    languageName: "English"
+    label: "English"
     hasCJKLanguage: false
     params:
       sitename: "Dream of Comic Club, NKUST (First Campus)"
