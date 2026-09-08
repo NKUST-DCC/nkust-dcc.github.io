@@ -3,9 +3,9 @@
     <div class="md:w-1/2">
       {{ .Content }}
       <a class="btn" href="{{ absLangURL "join" }}">{{ T "加入社團" }}</a>
+      {{ partial "新生群" . }}
     </div>
     <div class="md:w-1/2">
-      {{ partial "新生群" . }}
       {{ $calendars := (where .Site.RegularPages "Section" "calendar") }}
       {{ $calendars = (sort $calendars "Title" "desc") }}
       {{ $latest := (index $calendars 0).File.ContentBaseName }}

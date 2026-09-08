@@ -5,12 +5,21 @@
       id="新生群"
       title="{{ $title }}"
       href="https://line.me/R/ti/g/hMzq4CwdZa"
+      class="hover:no-underline hover:shadow-md"
     >
-      <img src="/assets/line/line-115.png" alt="{{ $title }}" />
+      <div class="flex items-center">
+        <img
+          class="h-28 w-28"
+          src="/assets/line/line-115.png"
+          alt="{{ $title }}"
+        />
+        <div class="text-black">
+          <div class="text">夢想漫研社</div>
+          <div class="text-2xl font-bold -my-3">115學年新生LINE群</div>
+          <div class="text-blue-600">https://line.me/R/ti/g/hMzq4CwdZa</div>
+        </div>
+      </div>
     </a>
-    <p>
-      (LINE在電腦上會拒絕打開連結，如果跑到LINE首頁去的話請試著改用手機掃描……)
-    </p>
   </div>
 {{ else }}
   <!-- 需要有東西 Hugo 才不會回報錯誤... -->
