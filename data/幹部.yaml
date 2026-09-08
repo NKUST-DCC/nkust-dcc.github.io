@@ -111,3 +111,18 @@
     role: 總務
   - name: 玟樺
     role: 活動
+115:
+  - role: 社長
+    name: 花見
+    photo: /assets/avatar/hanami.jpg
+  - role: 副社長
+    name: 門神
+    photo: /assets/avatar/doorspirit.jpg
+  - role: 總務
+    name: 餅乾
+  - role: 公關
+    name: 咲音
+  - role: 資訊
+    name: 甘蔗
+  - role: 紀錄
+    name: 幻馨
